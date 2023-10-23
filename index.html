@@ -187,7 +187,7 @@
 </section>
 
 
-
+<!-- TODO: embed google survey -->
 
 <section class="section" id="Code">
     <div class="columns is-centered">
@@ -224,60 +224,137 @@
       We designed a series of basic assembly task boards with 9 slots for different shaped pieces and different sizes as well as 54 pegs of different shapes, sizes, lengths, and colors. You can choose to print all or some of these suitable for your task. In addition, we designed an environment fixture for reorienting the pieces before insertion if they are grasped horizontally. 
 
       Refer to <a https://docs.google.com/document/d/14jp37YcES9fKLRLuuB4xPy7HWZb-7hi8xv4HEAamd-E/edit?usp=sharing>color/shape name and number reference sheet </a> for the name and number assigned to each shape and color throughout our project. 
+
+      <h3 class="title is-4"> Novel Objects for Grasping (Optional)</h3>
+
+      In addition to the original 54 insertion pieces, we designed 5 novel objects of different sizes, shapes, and colors to study the generalization abilities of the grasp policy.
+
+      <h3 class="title is-4"> Complex Assembly Task (Optional) </h3>
+
+      In addition to the three basic insertion task boards, we introduce two more complex assembly boards where interlocking pieces need to be assembled in a specific order.
+
+      <h3 class="title is-4"> 3D Printed Pieces </h3>
+
+      Camera Mounts
+
+      We designed two types of camera mounts for the RealSense D405 cameras. One is used to mount the camera in a fix position pointing at the workspace, while the other is mounted between the flange and the gripper of the Franka Panda arm for a eye-in-hand view.  
       </div>
     </div>
   </div>
 </div>
 </section>
 
-<section class="title is-4"> 
-  
-  </h2 class="title is-4"> Evaluation <h2> 
+<section class="section" id="Files">
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-3">Workspace setup</h2>
 
-    Evaluation Procedure
+      <div class="content has-text-justified">
 
-    <p>The randomization box is 32 x 32 cm. The randomization angle is ±10 degrees from the normal orientation.</p>
-    <p>The peg randomization box is 20x25 cm.</p>
-    <p>Between each grasping trial, randomize the location and angle of the peg.</p>
-    <p>Between each insertion trial, randomize the location of the board within the randomization box. Feel free to also rotate it, but generally keep it in the same orientation.</p>
+        Once all the necessary materials have been obtained, you can set up the workspace for the robot according to the <strong> instructions and dimensions in the diagram below. </strong>
 
-    <h2>Experiment 1: Comparing Depth for Grasping</h2>
-    <p><strong>Training Phase:</strong> Train a policy on all grasping data with (1) RGB only data, and (2) RGB + Depth data.</p>
-    <p><strong>Testing Phase 1:</strong> Roll out each policy on 10 randomly selected pegs for 5 trials each. Maintain a 50:50 ratio between horizontal and vertical grasps.</p>
-    <p><strong>Testing Phase 2:</strong> Roll out each policy on 5 randomly selected novel objects for 5 trials each, again aiming for a 50:50 ratio between horizontal and vertical grasps.</p>
+        <ol>
+          <li>Fix the bin 12 cm in front of the robot base.</li>
+          <li>Fix the reorientation fixture onto the bin according to the dimensions in the diagram.</li>
+          <li>Mount side camera posts outside the bin according to the dimensions in the diagram.</li>
+          <li>Fix the 3D-printed side camera mount onto the interior side of the post with the bottom edge of the mount 15cm above the bottom of the bin.   </li>
+          <li> Mount the wrist camera between the flange and gripper of the Franka arm. </li>
+        </ol>
 
-    <h2>Experiment 2: Comparing Oval Grasping Generalization</h2>
-    <p><strong>Training Phase:</strong> Train a policy on RGB grasping data with (1) oval data held out, and (2) training only on oval data.</p>
-    <p><strong>Testing Phase:</strong> Roll out each policy on all 6 ovals for 5 trials each, with approximately half of the trials as horizontal grasps and the other half as vertical grasps.</p>
+      </div>
 
-    <h2>Experiment 3: Comparing Depth for Insertion</h2>
-    <p><strong>Training Phase:</strong> Train an insertion policy only on insertion data for (1) RGB round data, (2) RGB hexagon data, and (3) RGB double square data. Train three additional policies in the same manner but include RGB + Depth data.</p>
-    <p><strong>Testing Phase:</strong> Evaluate each policy on the peg that it was trained with. For each shape, evaluate on all 6 pegs of that shape, with 5 trials for each peg.</p>
-
-    <h2>Experiment 4: Insertion Generalization Between Different Shapes</h2>
-    <p><strong>Training Phase:</strong> Train an insertion policy on RGB Data with (1) all round data, and (2) all insertion data.</p>
-    <p><strong>Testing Phase 1:</strong> Evaluate the policy trained only on round data on all 6 round pegs, with 5 trials each peg.</p>
-    <p><strong>Testing Phase 2:</strong> Evaluate the policy trained only on round data on all 6 star pegs, with 5 trials each peg.</p>
-    <p><strong>Testing Phase 3:</strong> Evaluate the policy trained on all data on all 6 round pegs, with 5 trials each peg.</p>
-    <p><strong>Testing Phase 4:</strong> Evaluate the policy trained on all data on all 6 star pegs, with 5 trials each peg.</p>
-
-    <h2>Experiment 5: Long Horizon</h2>
-    <p><strong>Training Phase:</strong> Using RGB only data, train on all data with the same network.</p>
-    <p><strong>Testing Phase:</strong> Evaluate on 5 random pegs, conducting 2 trials each for a total of 10 trials.</p>
+      <!-- TODO: insert image -->
+    </div>
+  </div>
+</div>
 </section>
 
+<section class="section" id="Files">
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-3">Evaluation</h2>
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+      <h3 class="title is-4">Evaluation procedure</h3>
+
+      <p> <strong> The randomization box is 32 x 32 cm. The randomization angle is ±10 degrees from the normal orientation. </strong></p>
+
+      <p> <strong>  The peg randomization box is 20x25 cm. </strong></p>
+
+      <p> <strong>  Between each grasping trial, randomize the location and angle of the peg. </strong></p>
+
+      <p> <strong> Between each insertion trial, randomize the location of the board within the randomization box. Feel free to also rotate it, but generally keep it in the same orientation. </strong></p>
+
+      Experiment 1: Comparing depth for grasping
+
+      <div class="content has-text-justified">
+      <ol>
+        <ul>
+      <li><strong>Training Phase:</strong> Train a policy on all grasping data with (1) RGB only data, and (2) RGB + Depth data.</li>
+      <li><strong>Testing Phase 1:</strong> Roll out each policy on 10 randomly selected pegs for 5 trials each. Maintain a 50:50 ratio between horizontal and vertical grasps.</li>
+      <li><strong>Testing Phase 2:</strong> Roll out each policy on 5 randomly selected novel objects for 5 trials each, again aiming for a 50:50 ratio between horizontal and vertical grasps.</li>
+          </ul>
+      </ol>
+      </div>
+
+      Experiment 2: Comparing oval grasping generalization
+
+      <div class="content has-text-justified">
+      <ol>
+        <ul>
+
+          <li> Training phase: Train a policy </li>
+
+          <li><strong>Testing Phase:</strong> Roll out each policy on all 6 ovals for 5 trials each, with approximately half of the trials as horizontal grasps and the other half as vertical grasps.</li>
+
+        </ul>
+      </ol>
+      </div>
+
+      Experiment 3: Comparing depth for insertion
+
+      <div class="content has-text-justified"> 
+
+      <ol>
+        <ul>
+          <li><strong>Training Phase:</strong> Train an insertion policy only on insertion data for (1) RGB round data, (2) RGB hexagon data, and (3) RGB double square data. Train three additional policies in the same manner but include RGB + Depth data.</li>
+          <li><strong>Testing Phase:</strong> Evaluate each policy on the peg that it was trained with. For each shape, evaluate on all 6 pegs of that shape, with 5 trials for each peg.</li>
+        </ul>
+      </ol>
+      </div>
+
+      Experiment 4: Insertion generalization between different shapes
+
+      <div class="content has-text-justified"> 
+        <ol>
+          <ul>
+              <li> Training Phase: Train an insertion policy on RGB Data with (1) all round data, and (2) all insertion data.</li>
+              <li> Testing Phase 1: Evaluate the policy trained only on round data on all 6 round pegs, with 5 trials each peg.</li>
+              <li> Testing Phase 2: Evaluate the policy trained only on round data on all 6 star pegs, with 5 trials each peg. </li>
+              <li> Testing Phase 3: Evaluate the policy trained on all data on all 6 round pegs, with 5 trials each peg.</li>
+              <li> Testing Phase 4: Evaluate the policy trained on all data on all 6 star pegs, with 5 trials each peg.</li>
+          </ul>
+        </ol>
+      </div>
+
+      Experiment 5: Long horizon
+
+      <div class="content has-text-justified"> 
+        <ol>
+          <ul>
+              <li> Training Phase: Using RGB only data, train on all data with the same network.</li>
+              <li> Testing Phase: Evaluate on 5 random pegs, conducting 2 trials each for a total of 10 trials.</li>
+          </ul>
+        </ol>
+      </div>
+
+      Evaluation Results from our baseline
+
+    </div>
   </div>
 </section>
+
+
+
 
 
 <footer class="footer">
@@ -317,6 +394,7 @@
     </div>
   </div>
 </footer>
+
 
 </body>
 </html>
