@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning">
+  <meta name="keywords" content="FMB, Robotic">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning</title>
+
+<!--   <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../static/js/fontawesome.all.min.js"></script>
+  <script src="../static/js/bulma-carousel.min.js"></script>
+  <script src="../static/js/bulma-slider.min.js"></script>
+  <script src="../static/js/index.js"></script>
+</head>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Navigation
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href=../index.html>
+            Home 
+          </a>
+          <a class="navbar-item" href=../dataset/index.html>
+            Dataset
+          </a>
+          <a class="navbar-item" href=../code/index.html>
+            Code
+          </a>
+          <a class="navbar-item" href=../files/index.html>
+            Material and CAD Files
+          </a>
+          <a class="navbar-item" href=../setup/index.html>
+            Workspace Setup
+          </a>
+          <a class="navbar-item" href=../procedure/index.html>
+            Evaluation Procedure
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="section" id="Files">
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-3">Material and CAD Files</h2>
+
+      <div class="content has-text-justified"
+        <p>
+          The equipment used in our project is entirely available online or 3D printed. We have included the links to purchase the equipment and 3D printing filament as well as the CAD files below. 
+
+          <a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit?usp=sharing">This master spreadsheet </a> contains all the equipment needed and how to obtain them. Each section of the spreadsheet is detailed below. 
+        </p>
+
+      <h3 class="title is-4">Purchased Equipment</h3>
+        <a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=445569452&range=A1"> Links to purchase the required equipment can be found here. </a>
+
+      <h3 class="title is-4"> Basic Task Pieces</h3>
+      We designed a series of basic assembly task boards with 9 slots for different shaped pieces and different sizes as well as 54 pegs of different shapes, sizes, lengths, and colors. You can choose to print all or some of these suitable for your task. In addition, we designed an environment fixture for reorienting the pieces before insertion if they are grasped horizontally. 
+
+      Refer to <a https://docs.google.com/document/d/14jp37YcES9fKLRLuuB4xPy7HWZb-7hi8xv4HEAamd-E/edit?usp=sharing>color/shape name and number reference sheet </a> for the name and number assigned to each shape and color throughout our project. 
+
+
+      <div class="image-container" style="display: flex">
+        <div>
+            <img src="../static/images/assembly_board.png" alt="Image A" style="width:85%">
+            <p class="caption"> <font size="2"><a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=467708506&range=1:1000"> Assembly Boards</a> <br /> Set of 3 boards with 9 holes each. Each board has different sized holes</p></font>
+        </div>
+        <div>
+            <img src="../static/images/insertion_pieces.png" alt="Image B" style="width:90%">
+            <p class="caption"> <font size="2"> <a href = "https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=0&range=E2:E55">Insertion Policies</a> <br />
+              Set of pegs of three sizes, two lengths, and 9 shapes each for a total of 54 pegs. </font></p>
+        </div>
+        <div>
+          <img src="../static/images/environment_fixture.png" alt="Image B" style="width:100%">
+          <p class="caption"><font size="2"> <a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=2034513620&range=1:1000"> Environment </a> <br />
+            1 Environment reorienting fixture</font></p>
+          </div>
+    </div>
+
+      <h3 class="title is-4"> Novel Objects for Grasping (Optional)</h3>
+
+      In addition to the original 54 insertion pieces, we designed 5 novel objects of different sizes, shapes, and colors to study the generalization abilities of the grasp policy.
+
+            <div class="image-container" style="display: flex">
+        <div>
+            <img src="../static/images/Novel_object_CAD_Files.png" alt="Image A" style="width:15%">
+            <p class="caption"> <font size="2"><a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=467708506&range=1:1000"> Assembly Boards</a> <br /> Set of 3 boards with 9 holes each. Each board has different sized holes</p></font>
+        </div>
+    </div>
+
+      <h3 class="title is-4"> Complex Assembly Task (Optional) </h3>
+
+      In addition to the three basic insertion task boards, we introduce two more complex assembly boards where interlocking pieces need to be assembled in a specific order.
+
+      <h3 class="title is-4"> 3D Printed Pieces </h3>
+
+      Camera Mounts
+
+      We designed two types of camera mounts for the RealSense D405 cameras. One is used to mount the camera in a fix position pointing at the workspace, while the other is mounted between the flange and the gripper of the Franka Panda arm for a eye-in-hand view.  
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a> -->
+      <!-- <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a> -->
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            If you have any questions about this project, please contact us at functionalmanipulationdataset@gmail.com
+          </p>
+          <p>
+            All data is provided under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License </a>.
+          </p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of the website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
