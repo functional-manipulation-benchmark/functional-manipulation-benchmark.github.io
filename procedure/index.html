@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning">
+  <meta name="keywords" content="FMB, Robotic">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning</title>
+
+<!--   <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../static/js/fontawesome.all.min.js"></script>
+  <script src="../static/js/bulma-carousel.min.js"></script>
+  <script src="../static/js/bulma-slider.min.js"></script>
+  <script src="../static/js/index.js"></script>
+</head>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Navigation
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href=../index.html>
+            Home 
+          </a>
+          <a class="navbar-item" href=../dataset/index.html>
+            Dataset
+          </a>
+          <a class="navbar-item" href=../code/index.html>
+            Code
+          </a>
+          <a class="navbar-item" href=../files/index.html>
+            Material and CAD Files
+          </a>
+          <a class="navbar-item" href=../setup/index.html>
+            Workspace Setup
+          </a>
+          <a class="navbar-item" href=../procedure/index.html>
+            Evaluation Procedure
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="section" id="Files">
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-3">Evaluation</h2>
+
+      <h3 class="title is-4">Evaluation procedure</h3>
+
+      <p> <strong> The randomization box is 32 x 32 cm. The randomization angle is ±10 degrees from the normal orientation. </strong></p>
+
+      <p> <strong>  The peg randomization box is 20x25 cm. </strong></p>
+
+      <p> <strong>  Between each grasping trial, randomize the location and angle of the peg. </strong></p>
+
+      <p> <strong> Between each insertion trial, randomize the location of the board within the randomization box. Feel free to also rotate it, but generally keep it in the same orientation. </strong></p>
+
+      Experiment 1: Comparing depth for grasping
+
+      <div class="content has-text-justified">
+      <ol>
+        <ul>
+      <li><strong>Training Phase:</strong> Train a policy on all grasping data with (1) RGB only data, and (2) RGB + Depth data.</li>
+      <li><strong>Testing Phase 1:</strong> Roll out each policy on 10 randomly selected pegs for 5 trials each. Maintain a 50:50 ratio between horizontal and vertical grasps.</li>
+      <li><strong>Testing Phase 2:</strong> Roll out each policy on 5 randomly selected novel objects for 5 trials each, again aiming for a 50:50 ratio between horizontal and vertical grasps.</li>
+          </ul>
+      </ol>
+      </div>
+
+      Experiment 2: Comparing oval grasping generalization
+
+      <div class="content has-text-justified">
+      <ol>
+        <ul>
+
+          <li> Training phase: Train a policy </li>
+
+          <li><strong>Testing Phase:</strong> Roll out each policy on all 6 ovals for 5 trials each, with approximately half of the trials as horizontal grasps and the other half as vertical grasps.</li>
+
+        </ul>
+      </ol>
+      </div>
+
+      Experiment 3: Comparing depth for insertion
+
+      <div class="content has-text-justified"> 
+
+      <ol>
+        <ul>
+          <li><strong>Training Phase:</strong> Train an insertion policy only on insertion data for (1) RGB round data, (2) RGB hexagon data, and (3) RGB double square data. Train three additional policies in the same manner but include RGB + Depth data.</li>
+          <li><strong>Testing Phase:</strong> Evaluate each policy on the peg that it was trained with. For each shape, evaluate on all 6 pegs of that shape, with 5 trials for each peg.</li>
+        </ul>
+      </ol>
+      </div>
+
+      Experiment 4: Insertion generalization between different shapes
+
+      <div class="content has-text-justified"> 
+        <ol>
+          <ul>
+              <li> Training Phase: Train an insertion policy on RGB Data with (1) all round data, and (2) all insertion data.</li>
+              <li> Testing Phase 1: Evaluate the policy trained only on round data on all 6 round pegs, with 5 trials each peg.</li>
+              <li> Testing Phase 2: Evaluate the policy trained only on round data on all 6 star pegs, with 5 trials each peg. </li>
+              <li> Testing Phase 3: Evaluate the policy trained on all data on all 6 round pegs, with 5 trials each peg.</li>
+              <li> Testing Phase 4: Evaluate the policy trained on all data on all 6 star pegs, with 5 trials each peg.</li>
+          </ul>
+        </ol>
+      </div>
+
+      Experiment 5: Long horizon
+
+      <div class="content has-text-justified"> 
+        <ol>
+          <ul>
+              <li> Training Phase: Using RGB only data, train on all data with the same network.</li>
+              <li> Testing Phase: Evaluate on 5 random pegs, conducting 2 trials each for a total of 10 trials.</li>
+          </ul>
+        </ol>
+      </div>
+
+
+      Evaluation Results from our baseline
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a> -->
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            If you have any questions about this project, please contact us at functionalmanipulationdataset@gmail.com
+          </p>
+          <p>
+            All data is provided under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License </a>.
+          </p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of the website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

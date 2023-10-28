@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning">
+  <meta name="description" content="FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning">
   <meta name="keywords" content="FMB, Robotic">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning</title>
 
-<!--   <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!--   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,17 +20,15 @@
     gtag('js', new Date());
 
     gtag('config', 'G-PYVRSFMDRL');
-  </script> -->
+  </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
@@ -40,361 +38,188 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
+
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="false"></span>
+        <span aria-hidden="false"></span>
+        <span aria-hidden="false"></span>
+      </a>
     </div>
 
-  </div>
-</nav>
+    <a class="navbar-item" href=./index.html>
+      Home
+    </a>
+
+  
+    <a class="navbar-item" href=./dataset/index.html>
+      Dataset
+    </a>
+    <a class="navbar-item" href=./code/index.html>
+      Code
+    </a>
+    <a class="navbar-item" href=./files/index.html>
+      Material and CAD Files
+    </a>
+    <a class="navbar-item" href=./setup/index.html>
+      Workspace Setup
+    </a>
+    <a class="navbar-item" href=./procedure/index.html>
+      Evaluation Procedure
+    </a>
+  </nav>
 
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://people.eecs.berkeley.edu/~jianlanluo/">Jianlan Luo</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://charlesxu0124.github.io/">Charles Xu</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a><sup>1</sup>,
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of California Berkeley,</span>
-            <span class="author-block"><sup>2</sup></span>
-          </div>
-
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
+            <h1 class="title is-1 publication-title">FMB: A Functional Manipulation Benchmark for Generalizable Robotic
+              Learning</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://people.eecs.berkeley.edu/~jianlanluo/">Jianlan Luo<sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://charlesxu0124.github.io/">Charles Xu</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://fangchenliu.github.io/">Fangchen Liu</a>,</span>
+              <span class="author-block">
+                <a href="https://liam-tan.github.io/">Liam Tan</a>,</span>
+              <span class="author-block">
+                <a href="https://zipeng-lin.github.io/">Zipeng Lin</a>,</span>
+              <span class="author-block">
+                <a href="https://jeffreywu13579.github.io/">Jeffrey Wu</a>,</span>
+              <span class="author-block">
+                <a href="http://people.eecs.berkeley.edu/~pabbeel/">Pieter Abbeel</a> and</span>
+
+              <span class="author-block">
+                <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>
               </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://youtu.be/gt3wxt-rXfo"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/manipulationdataset/ManipulationDataset"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
             </div>
 
+            <div class="is-size-9 publication-authors">
+              <span class="author-block"><sup>*</sup> Equal Contribution</span>
+            </div>
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://youtu.be/gt3wxt-rXfo" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/manipulationdataset/ManipulationDataset"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">A Functional Manipulation Benchmark for Generalizable Robotic Learning</h2>
-        <div class="content has-text-justified">
-          Our benchmark for studying robotic learning for functional manipulation consists of a variety of easily reproducible 3D printed objects, each one requiring a sequence of grasping, reorientation, and assembly behaviors. Generalization can be evaluated on test objects and varied positions, as well as more complex multi-stage assembly tasks. We also provide an imitation learning system that provides a basic set of policies for each skill, allowing researchers to use our tasks as a toolkit for studying any portion of the pipeline.
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">A Functional Manipulation Benchmark for Generalizable Robotic Learning</h2>
+          <img src="./static/images/overall.jpg" alt="Overview">
+          <div class="content has-text-justified">
+            Our benchmark for studying robotic learning for functional manipulation consists of a variety of easily
+            reproducible 3D printed objects, each one requiring a sequence of grasping, reorientation, and assembly
+            behaviors. Generalization can be evaluated on test objects and varied positions, as well as more complex
+            multi-stage assembly tasks. We also provide an imitation learning system that provides a basic set of
+            policies for each skill, allowing researchers to use our tasks as a toolkit for studying any portion of the
+            pipeline.
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gt3wxt-rXfo?si=8C6EGg9HyBaY6ltp"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+  <!-- TODO: embed google survey -->
+
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <!-- <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a> -->
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              If you have any questions about this project, please contact us at functionalmanipulationdataset@gmail.com
+            </p>
+            <p>
+              All data is provided under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons
+                Attribution 4.0 International License </a>.
+            </p>
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                code</a> of the website,
+              we just ask that you link back to this page in the footer.
+              Please remember to remove the analytics code included in the header of the website which
+              you do not want on your website.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://youtu.be/gt3wxt-rXfo"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
-  </div>
-</section>
-
-
-<!-- TODO: embed google survey -->
-
-<section class="section" id="Code">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Training Code</h2>
-
-        <div class="content has-text-justified"
-          <p>
-            <a href="https://github.com/manipulationdataset/ManipulationDataset">This repository </a> contains the basic training code used to obtain our baseline results. Keep in mind that you will have to modify the bash script when you would like to change the training settings.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section" id="Files">
-  <div class="columns is-centered">
-    <div class="column is-full-width">
-      <h2 class="title is-3">Material and CAD Files</h2>
-
-      <div class="content has-text-justified"
-        <p>
-          The equipment used in our project is entirely available online or 3D printed. We have included the links to purchase the equipment and 3D printing filament as well as the CAD files below. 
-
-          <a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit?usp=sharing">This master spreadsheet </a> contains all the equipment needed and how to obtain them. Each section of the spreadsheet is detailed below. 
-        </p>
-
-      <h3 class="title is-4">Purchased Equipment</h3>
-        <a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=445569452&range=A1"> Links to purchase the required equipment can be found here. </a>
-
-      <h3 class="title is-4"> Basic Task Pieces</h3>
-      We designed a series of basic assembly task boards with 9 slots for different shaped pieces and different sizes as well as 54 pegs of different shapes, sizes, lengths, and colors. You can choose to print all or some of these suitable for your task. In addition, we designed an environment fixture for reorienting the pieces before insertion if they are grasped horizontally. 
-
-      Refer to <a https://docs.google.com/document/d/14jp37YcES9fKLRLuuB4xPy7HWZb-7hi8xv4HEAamd-E/edit?usp=sharing>color/shape name and number reference sheet </a> for the name and number assigned to each shape and color throughout our project. 
-
-      <h3 class="title is-4"> Novel Objects for Grasping (Optional)</h3>
-
-      In addition to the original 54 insertion pieces, we designed 5 novel objects of different sizes, shapes, and colors to study the generalization abilities of the grasp policy.
-
-      <h3 class="title is-4"> Complex Assembly Task (Optional) </h3>
-
-      In addition to the three basic insertion task boards, we introduce two more complex assembly boards where interlocking pieces need to be assembled in a specific order.
-
-      <h3 class="title is-4"> 3D Printed Pieces </h3>
-
-      Camera Mounts
-
-      We designed two types of camera mounts for the RealSense D405 cameras. One is used to mount the camera in a fix position pointing at the workspace, while the other is mounted between the flange and the gripper of the Franka Panda arm for a eye-in-hand view.  
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<section class="section" id="Files">
-  <div class="columns is-centered">
-    <div class="column is-full-width">
-      <h2 class="title is-3">Workspace setup</h2>
-
-      <div class="content has-text-justified">
-
-        Once all the necessary materials have been obtained, you can set up the workspace for the robot according to the <strong> instructions and dimensions in the diagram below. </strong>
-
-        <ol>
-          <li>Fix the bin 12 cm in front of the robot base.</li>
-          <li>Fix the reorientation fixture onto the bin according to the dimensions in the diagram.</li>
-          <li>Mount side camera posts outside the bin according to the dimensions in the diagram.</li>
-          <li>Fix the 3D-printed side camera mount onto the interior side of the post with the bottom edge of the mount 15cm above the bottom of the bin.   </li>
-          <li> Mount the wrist camera between the flange and gripper of the Franka arm. </li>
-        </ol>
-
-      </div>
-
-      <!-- TODO: insert image -->
-    </div>
-  </div>
-</div>
-</section>
-
-<section class="section" id="Files">
-  <div class="columns is-centered">
-    <div class="column is-full-width">
-      <h2 class="title is-3">Evaluation</h2>
-
-      <h3 class="title is-4">Evaluation procedure</h3>
-
-      <p> <strong> The randomization box is 32 x 32 cm. The randomization angle is ±10 degrees from the normal orientation. </strong></p>
-
-      <p> <strong>  The peg randomization box is 20x25 cm. </strong></p>
-
-      <p> <strong>  Between each grasping trial, randomize the location and angle of the peg. </strong></p>
-
-      <p> <strong> Between each insertion trial, randomize the location of the board within the randomization box. Feel free to also rotate it, but generally keep it in the same orientation. </strong></p>
-
-      Experiment 1: Comparing depth for grasping
-
-      <div class="content has-text-justified">
-      <ol>
-        <ul>
-      <li><strong>Training Phase:</strong> Train a policy on all grasping data with (1) RGB only data, and (2) RGB + Depth data.</li>
-      <li><strong>Testing Phase 1:</strong> Roll out each policy on 10 randomly selected pegs for 5 trials each. Maintain a 50:50 ratio between horizontal and vertical grasps.</li>
-      <li><strong>Testing Phase 2:</strong> Roll out each policy on 5 randomly selected novel objects for 5 trials each, again aiming for a 50:50 ratio between horizontal and vertical grasps.</li>
-          </ul>
-      </ol>
-      </div>
-
-      Experiment 2: Comparing oval grasping generalization
-
-      <div class="content has-text-justified">
-      <ol>
-        <ul>
-
-          <li> Training phase: Train a policy </li>
-
-          <li><strong>Testing Phase:</strong> Roll out each policy on all 6 ovals for 5 trials each, with approximately half of the trials as horizontal grasps and the other half as vertical grasps.</li>
-
-        </ul>
-      </ol>
-      </div>
-
-      Experiment 3: Comparing depth for insertion
-
-      <div class="content has-text-justified"> 
-
-      <ol>
-        <ul>
-          <li><strong>Training Phase:</strong> Train an insertion policy only on insertion data for (1) RGB round data, (2) RGB hexagon data, and (3) RGB double square data. Train three additional policies in the same manner but include RGB + Depth data.</li>
-          <li><strong>Testing Phase:</strong> Evaluate each policy on the peg that it was trained with. For each shape, evaluate on all 6 pegs of that shape, with 5 trials for each peg.</li>
-        </ul>
-      </ol>
-      </div>
-
-      Experiment 4: Insertion generalization between different shapes
-
-      <div class="content has-text-justified"> 
-        <ol>
-          <ul>
-              <li> Training Phase: Train an insertion policy on RGB Data with (1) all round data, and (2) all insertion data.</li>
-              <li> Testing Phase 1: Evaluate the policy trained only on round data on all 6 round pegs, with 5 trials each peg.</li>
-              <li> Testing Phase 2: Evaluate the policy trained only on round data on all 6 star pegs, with 5 trials each peg. </li>
-              <li> Testing Phase 3: Evaluate the policy trained on all data on all 6 round pegs, with 5 trials each peg.</li>
-              <li> Testing Phase 4: Evaluate the policy trained on all data on all 6 star pegs, with 5 trials each peg.</li>
-          </ul>
-        </ol>
-      </div>
-
-      Experiment 5: Long horizon
-
-      <div class="content has-text-justified"> 
-        <ol>
-          <ul>
-              <li> Training Phase: Using RGB only data, train on all data with the same network.</li>
-              <li> Testing Phase: Evaluate on 5 random pegs, conducting 2 trials each for a total of 10 trials.</li>
-          </ul>
-        </ol>
-      </div>
-
-      Evaluation Results from our baseline
-
-    </div>
-  </div>
-</section>
-
-
-
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            If you have any questions about this project, please contact us at functionalmanipulationdataset@gmail.com
-          </p>
-          <p>
-            All data is provided under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License </a>.
-          </p>
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 
 </body>
+
 </html>
