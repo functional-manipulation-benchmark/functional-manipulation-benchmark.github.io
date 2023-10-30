@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="../static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -49,35 +49,24 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          Navigation
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href=../index.html>
-            Home 
-          </a>
-          <a class="navbar-item" href=../dataset/index.html>
-            Dataset
-          </a>
-          <a class="navbar-item" href=../code/index.html>
-            Code
-          </a>
-          <a class="navbar-item" href=../files/index.html>
-            Material and CAD Files
-          </a>
-          <a class="navbar-item" href=../setup/index.html>
-            Workspace Setup
-          </a>
-          <a class="navbar-item" href=../procedure/index.html>
-            Evaluation Procedure
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <a class="navbar-item" href=../index.html>
+    Home
+  </a>
+  <a class="navbar-item" href=../dataset/index.html>
+    Dataset
+  </a>
+  <a class="navbar-item" href=../code/index.html>
+    Code
+  </a>
+  <a class="navbar-item" href=../files/index.html>
+    Material and CAD Files
+  </a>
+  <a class="navbar-item" href=../setup/index.html>
+    Workspace Setup
+  </a>
+  <a class="navbar-item" href=../procedure/index.html>
+    Evaluation Procedure
+  </a>
 </nav>
 
 <section class="section" id="Files">
@@ -122,11 +111,11 @@
 
       In addition to the original 54 insertion pieces, we designed 5 novel objects of different sizes, shapes, and colors to study the generalization abilities of the grasp policy.
 
-            <div class="image-container" style="display: flex">
+            <!-- <div class="image-container" style="display: flex">
         <div>
             <img src="../static/images/Novel_object_CAD_Files.png" alt="Image A" style="width:15%">
             <p class="caption"> <font size="2"><a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=467708506&range=1:1000"> Assembly Boards</a> <br /> Set of 3 boards with 9 holes each. Each board has different sized holes</p></font>
-        </div>
+        </div> -->
     </div>
 
       <h3 class="title is-4"> Complex Assembly Task (Optional) </h3>
@@ -147,7 +136,26 @@
 
 
 
+<div class="content-container">
 
+  <div class="video-container">
+      <div class="video-header">
+          <h3>View a Random Trajectory</h3>
+          <div id="sample-button">
+              <img src="icons/replay.svg" />
+              <div>Sample</div>
+          </div>
+      </div>
+      <div class="video-grid lang">
+          <div class="method">Language Annotation</div>
+          <div class="method">Initial</div>
+          <div class="method">Final</div>
+          <div class="task" id="annotation">loading...</div>
+          <div class="video"><img id="first_image" src="icons/dots.jpg" /></div>
+          <div class="video"><img id="last_image" src="icons/dots.jpg" /></video></div>
+      </div>
+  </div>
+</div>
 
 
 
@@ -194,6 +202,69 @@
   </div>
 </footer>
 
+<script>
+  // replay button animation
+  new Image().src = '../icons/replay.svg' // preload
 
+  const playButtons = document.querySelectorAll('.play-button');
+  playButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+          button.parentElement.parentElement.querySelectorAll('video').forEach((video) => {
+              try {
+                  video.fastSeek(0);
+              } catch (error) {
+                  video.currentTime = 0;
+              }
+              video.play();
+          });
+          const img = button.querySelector('img');
+          img.src = '../icons/replay.svg';
+
+          const text = button.querySelector('div');
+          text.innerText = 'Replay';
+
+          button.classList.remove('replay');
+          void button.offsetWidth;
+          button.classList.add('replay');
+      });
+  });
+
+  // View Random Trajectory Widget
+  var trajLinks;
+  fetch("traj_links.csv")
+      .then(response => response.text())
+      .then(text => trajLinks = text.split(/\r\n|\n/))
+      .then(sample);
+
+  const prefix = "https://rail.eecs.berkeley.edu/datasets/bridge_release/";
+  const firstImage = document.querySelector("#first_image");
+  const lastImage = document.querySelector("#last_image");
+  const annotation = document.querySelector("#annotation");
+  function sample() {
+      if (typeof trajLinks === 'undefined') return;
+
+      firstImage.src = 'icons/dots.jpg';
+      lastImage.src = 'icons/dots.jpg';
+      annotation.innerText = 'loading...';
+
+      const index = Math.floor(Math.random() * trajLinks.length);
+      const links = trajLinks[index].split(",");
+
+      firstImage.src = prefix + links[0];
+      lastImage.src = prefix + links[1];
+      annotation.innerText = links[2];
+  }
+
+  const sampleButton = document.querySelector('#sample-button');
+  sampleButton.addEventListener('click', () => {
+      if (firstImage.src.includes('dots.jpg') || lastImage.src.includes('dots.jpg')) return;
+
+      sample();
+
+      sampleButton.classList.remove('replay');
+      void sampleButton.offsetWidth;
+      sampleButton.classList.add('replay');
+  });
+</script>
 </body>
 </html>
