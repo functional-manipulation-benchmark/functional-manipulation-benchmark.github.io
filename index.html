@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="stylesheet" href="./main.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -176,19 +177,37 @@
 
   <!-- TODO: embed google survey -->
 
-
+  <div class="content-container">
+    <div class="video-container">
+        <div class="video-header">
+            <h3>View a Random Trajectory</h3>
+            <div id="sample-button">
+                <img src="icons/replay.svg" />
+                <div>Sample</div>
+            </div>
+        </div>
+        <div class="video-grid lang">
+            <div class="method">Primitive</div>
+            <div class="method">Side 1 View</div>
+            <div class="method">Side 1 View</div>
+            <div class="method">Wrist 1 View</div>
+            <div class="method">Wrist 2 View</div>
+            <div class="task" id="annotation">loading...</div>
+            <div class="video"><video id="side_1_image" preload="auto" style="max-width: 100%; height: 100%;" loop></video></div>
+            <div class="video"><video id="side_2_image"  preload="auto" style="max-width: 100%; height: 100%;" loop></video></div>
+            <div class="video"><video id="wrist_1_image"  preload="auto" style="max-width: 100%; height: 100%;" loop></video></div>
+            <div class="video"><video id="wrist_2_image"  preload="auto" style="max-width: 100%; height: 100%;" loop></video></div>
+        </div>
+    </div>
+  </div>
+  
+  
 
 
 
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <!-- <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
-          <i class="fas fa-file-pdf"></i>
-        </a>
-        <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-          <i class="fab fa-github"></i>
-        </a> -->
       </div>
       <div class="columns is-centered">
         <div class="column is-8">
@@ -218,7 +237,92 @@
     </div>
   </footer>
 
+  <script>
+    // replay button animation
+    new Image().src = 'icons/replay.svg' // preload
+  
+    const playButtons = document.querySelectorAll('.play-button');
+    playButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            button.parentElement.parentElement.querySelectorAll('video').forEach((video) => {
+                try {
+                    video.fastSeek(0);
+                } catch (error) {
+                    video.currentTime = 0;
+                }
+                video.play();
+            });
+            const img = button.querySelector('img');
+            img.src = 'icons/replay.svg';
+  
+            const text = button.querySelector('div');
+            text.innerText = 'Replay';
+  
+            button.classList.remove('replay');
+            void button.offsetWidth;
+            button.classList.add('replay');
+        });
+    });
+  // View Random Trajectory Widget
+  var trajLinks;
+  fetch("peg.csv")
+      .then(response => response.text())
+      // .then(text => trajLinks = text.split(/\r\n|\n/))
+      .then(text => trajLinks = text.split(/\r\n|\n/).filter(line => line.trim().length > 0 && line.split(",").length === 5))
+      .then(sample);
 
+
+  
+  const prefix = "peg_example_trajectory_mp4/";
+  const side1Image = document.querySelector("#side_1_image");
+  const side2Image = document.querySelector("#side_2_image");
+  const wrist1Image = document.querySelector("#wrist_1_image");
+  const wrist2Image = document.querySelector("#wrist_2_image");
+  const annotation = document.querySelector("#annotation");
+  function sample() {
+      if (typeof trajLinks === 'undefined') return;
+    
+      side1Image.src = '';
+      side2Image.src = '';
+      wrist1Image.src = '';
+      wrist2Image.src = '';
+      annotation.innerText = 'asd...';
+  
+      const index = Math.floor(Math.random() * trajLinks.length);
+      const links = trajLinks[index].split(",");
+  
+      side1Image.src = prefix + links[0];
+      // console.log('side1Image src:', side1Image.src);
+      side1Image.load();
+      side1Image.play();
+
+      side2Image.src = prefix + links[1];
+      side2Image.load();
+      side2Image.play();
+
+      wrist1Image.src = prefix + links[2];
+      wrist1Image.load();
+      wrist1Image.play();
+
+      wrist2Image.src = prefix + links[3];
+      wrist2Image.load();
+      wrist2Image.play();
+
+      annotation.innerText = links[4];
+  }
+  
+  const sampleButton = document.querySelector('#sample-button');
+  sampleButton.addEventListener('click', () => {
+      if (wrist2Image.readyState === 0) return; // Check if video is ready
+  
+      sample();
+  
+      sampleButton.classList.remove('replay');
+      void sampleButton.offsetWidth;
+      sampleButton.classList.add('replay');
+  });
+  </script>
+  
 </body>
 
 </html>

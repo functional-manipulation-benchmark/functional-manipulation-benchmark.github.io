@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning</title>
 
-<!--   <!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>  
     window.dataLayer = window.dataLayer || [];
@@ -21,18 +21,18 @@
 
     gtag('config', 'G-PYVRSFMDRL');
   </script>
-
+  <link rel="stylesheet" href="../main.css">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="../static/css/bulma.min.css">
-  <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
+        <link rel="stylesheet" href="../static/css/bulma.min.css">
+        <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+        <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+        <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+        <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="../static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+        <link rel="stylesheet" href="../static/css/index.css">
+        <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="../static/js/fontawesome.all.min.js"></script>
@@ -72,12 +72,29 @@
 
 
 
-
-
-Coming Soon!
-
-
-
+<div class="content-container">
+  <div class="video-container">
+      <div class="video-header">
+          <h3>View a Random Trajectory</h3>
+          <div id="sample-button">
+              <img src="../icons/replay.svg" />
+              <div>Sample</div>
+          </div>
+      </div>
+      <div class="video-grid lang">
+          <div class="method">Language Annotation</div>
+          <div class="method">Initial</div>
+          <div class="method">Final</div>
+          <div class="method">Initial</div>
+          <div class="method">Final</div>
+          <div class="task" id="annotation">loading...</div>
+          <div class="video"><img id="side_1_image" src="icons/dots.jpg" /></div>
+          <div class="video"><img id="side_2_image" src="icons/dots.jpg" /></video></div>
+          <div class="video"><img id="wrist_1_image" src="icons/dots.jpg" /></div>
+          <div class="video"><img id="wrist_2_image" src="icons/dots.jpg" /></video></div>
+      </div>
+  </div>
+</div>
 
 
 
@@ -117,8 +134,78 @@ Coming Soon!
       </div>
     </div>
   </div>
+
 </footer>
 
+<script>
+  // replay button animation
+  new Image().src = 'icons/replay.svg' // preload
+
+  const playButtons = document.querySelectorAll('.play-button');
+  playButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+          button.parentElement.parentElement.querySelectorAll('video').forEach((video) => {
+              try {
+                  video.fastSeek(0);
+              } catch (error) {
+                  video.currentTime = 0;
+              }
+              video.play();
+          });
+          const img = button.querySelector('img');
+          img.src = 'icons/replay.svg';
+
+          const text = button.querySelector('div');
+          text.innerText = 'Replay';
+
+          button.classList.remove('replay');
+          void button.offsetWidth;
+          button.classList.add('replay');
+      });
+  });
+// View Random Trajectory Widget
+var trajLinks;
+fetch("board.csv")
+    .then(response => response.text())
+    .then(text => trajLinks = text.split(/\r\n|\n/))
+    .then(sample);
+
+const prefix = "https://rail.eecs.berkeley.edu/datasets/fmb/sample/board_example_trajectory_mp4/";
+const side1Image = document.querySelector("#side_1_image");
+const side2Image = document.querySelector("#side_2_image");
+const wrist1Image = document.querySelector("#wrist_1_image");
+const wrist2Image = document.querySelector("#wrist_2_image");
+const annotation = document.querySelector("#annotation");
+function sample() {
+    if (typeof trajLinks === 'undefined') return;
+
+    side1Image.src = 'icons/dots.jpg';
+    side2Image.src = 'icons/dots.jpg';
+    wrist1Image.src = 'icons/dots.jpg';
+    wrist2Image.src = 'icons/dots.jpg';
+    annotation.innerText = 'loading...';
+
+    const index = Math.floor(Math.random() * trajLinks.length);
+    const links = trajLinks[index].split(",");
+
+    side1Image.src = prefix + links[0];
+    side2Image.src = prefix + links[1];
+    wrist1Image.src = prefix + links[2];
+    wrist2Image.src = prefix + links[3];
+    annotation.innerText = links[4];
+}
+
+const sampleButton = document.querySelector('#sample-button');
+sampleButton.addEventListener('click', () => {
+    if (firstImage.src.includes('dots.jpg') || lastImage.src.includes('dots.jpg')) return;
+
+    sample();
+
+    sampleButton.classList.remove('replay');
+    void sampleButton.offsetWidth;
+    sampleButton.classList.add('replay');
+});
+</script>
 
 </body>
 </html>
