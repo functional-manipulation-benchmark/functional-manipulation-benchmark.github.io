@@ -297,3 +297,13 @@ a {
 .image-block:last-child {
     margin-right: 0;
 }
+
+.navbar {
+    background-color: #74b2f3; /* Example: a shade of blue */
+    color: white;
+}
+.navbar-item {
+    font-size: 22px; /* Adjust the size as needed */
+    padding: 10px 15px; /* Adjust padding as needed */
+    font-weight: bold;
+}

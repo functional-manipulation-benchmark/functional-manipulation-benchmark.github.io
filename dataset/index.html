@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WXK4VLVD');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="utf-8">
-  <meta name="description"
-        content="FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning">
+  <meta name="description" content="FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning">
   <meta name="keywords" content="FMB, Robotic">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning</title>
 
-  <script>  
+  <script>
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {
@@ -20,23 +30,22 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script>
   <link rel="stylesheet" href="../main.css">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
-        <link rel="stylesheet" href="../static/css/bulma.min.css">
-        <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
-        <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
-        <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
-        <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-        <link rel="stylesheet" href="../static/css/index.css">
-        <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="../static/js/fontawesome.all.min.js"></script>
   <script src="../static/js/bulma-carousel.min.js"></script>
   <script src="../static/js/bulma-slider.min.js"></script>
   <script src="../static/js/index.js"></script>
+  <link rel="stylesheet" href="../main.css">
 </head>
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -54,126 +63,74 @@
     Dataset
   </a>
   <a class="navbar-item" href=../files/index.html>
-    Material and CAD Files
+    Using FMB
   </a>
-  <a class="navbar-item" href=../setup/index.html>
+  <!-- <a class="navbar-item" href=../setup/index.html>
     Workspace Setup
   </a>
   <a class="navbar-item" href=../procedure/index.html>
     Evaluation Procedure
-  </a>
+  </a> -->
 </nav>
 
-Details of the dataset format coming soon!
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <!-- <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a> -->
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            If you have any questions about this project, please contact us at functionalmanipulationdataset@gmail.com
-          </p>
-          <p>
-            All data is provided under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License </a>.
-          </p>
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of the website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXK4VLVD" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <section>
+    <div class="container is-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" style="text-align: left;">Dataset</h2>
+          <div class="content has-text-justified">
+            <h3 class="title is-4">Single-Object Multi-Stage Manipulation Task</h3>
+            <h4 class="title is-5"><a
+                href="https://rail.eecs.berkeley.edu/datasets/fmb/single_object_manipulation.zip">Full Dataset
+                (541Gb)</a></h4>
+            <h3 class="title is-4">Multi-Object Multi-Stage Manipulation Task</h3>
+            <h4 class="title is-5"><a
+                href="https://rail.eecs.berkeley.edu/datasets/fmb/composition_board_1.zip">Assembly 1 (125Gb)</a>
+              <br>
+              <br>
+              <a href="https://rail.eecs.berkeley.edu/datasets/fmb/composition_board_2.zip">Assembly 2 (113Gb)</a>
+              <br>
+              <br>
+              <a href="https://rail.eecs.berkeley.edu/datasets/fmb/composition_board_3.zip">Assembly 3 (103Gb)</a>
+            </h4>
+            <br>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-</footer>
 
-<script>
-  // replay button animation
-  new Image().src = 'icons/replay.svg' // preload
-
-  const playButtons = document.querySelectorAll('.play-button');
-  playButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-          button.parentElement.parentElement.querySelectorAll('video').forEach((video) => {
-              try {
-                  video.fastSeek(0);
-              } catch (error) {
-                  video.currentTime = 0;
-              }
-              video.play();
-          });
-          const img = button.querySelector('img');
-          img.src = 'icons/replay.svg';
-
-          const text = button.querySelector('div');
-          text.innerText = 'Replay';
-
-          button.classList.remove('replay');
-          void button.offsetWidth;
-          button.classList.add('replay');
-      });
-  });
-// View Random Trajectory Widget
-var trajLinks;
-fetch("board.csv")
-    .then(response => response.text())
-    .then(text => trajLinks = text.split(/\r\n|\n/))
-    .then(sample);
-
-const prefix = "https://rail.eecs.berkeley.edu/datasets/fmb/sample/board_example_trajectory_mp4/";
-const side1Image = document.querySelector("#side_1_image");
-const side2Image = document.querySelector("#side_2_image");
-const wrist1Image = document.querySelector("#wrist_1_image");
-const wrist2Image = document.querySelector("#wrist_2_image");
-const annotation = document.querySelector("#annotation");
-function sample() {
-    if (typeof trajLinks === 'undefined') return;
-
-    side1Image.src = 'icons/dots.jpg';
-    side2Image.src = 'icons/dots.jpg';
-    wrist1Image.src = 'icons/dots.jpg';
-    wrist2Image.src = 'icons/dots.jpg';
-    annotation.innerText = 'loading...';
-
-    const index = Math.floor(Math.random() * trajLinks.length);
-    const links = trajLinks[index].split(",");
-
-    side1Image.src = prefix + links[0];
-    side2Image.src = prefix + links[1];
-    wrist1Image.src = prefix + links[2];
-    wrist2Image.src = prefix + links[3];
-    annotation.innerText = links[4];
-}
-
-const sampleButton = document.querySelector('#sample-button');
-sampleButton.addEventListener('click', () => {
-    if (firstImage.src.includes('dots.jpg') || lastImage.src.includes('dots.jpg')) return;
-
-    sample();
-
-    sampleButton.classList.remove('replay');
-    void sampleButton.offsetWidth;
-    sampleButton.classList.add('replay');
-});
-</script>
-
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              If you have any questions about this project, please contact us at functionalmanipulationdataset@gmail.com
+            </p>
+            <p>
+              All data is provided under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons
+                Attribution 4.0 International License </a>.
+            </p>
+            <p>
+              This website was built off of<a href="https://github.com/nerfies/nerfies.github.io">nerfies</a> source
+              code and
+              the trajectory visualizer was adapted from <a href="https://rail-berkeley.github.io/bridgedata/">Bridge
+                Data V2</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>

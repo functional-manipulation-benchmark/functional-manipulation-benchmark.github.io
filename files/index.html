@@ -2,6 +2,16 @@
 <html>
 
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WXK4VLVD');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta name="description" content="FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning">
   <meta name="keywords" content="FMB, Robotic">
@@ -35,6 +45,7 @@
   <script src="../static/js/bulma-carousel.min.js"></script>
   <script src="../static/js/bulma-slider.min.js"></script>
   <script src="../static/js/index.js"></script>
+  <link rel="stylesheet" href="../main.css">
 </head>
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -52,253 +63,230 @@
     Dataset
   </a>
   <a class="navbar-item" href=../files/index.html>
-    Material and CAD Files
+    Using FMB
   </a>
-  <a class="navbar-item" href=../setup/index.html>
+  <!-- <a class="navbar-item" href=../setup/index.html>
     Workspace Setup
   </a>
   <a class="navbar-item" href=../procedure/index.html>
     Evaluation Procedure
-  </a>
+  </a> -->
 </nav>
-<br>
-<div class="container is-widescreen">
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-four-fifths">
-      <h2 class="title is-3" style="text-align: left;">Material and CAD Files</h2>
 
-      <div class="content has-text-justified">
-        The equipment used in our project is entirely available online or 3D printed. We have included the links to
-        purchase the equipment and 3D printing filament as well as the CAD files below.
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXK4VLVD" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="container is-widescreen">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="text-align: left;" id="materials-cad-files">Materials and CAD Files</h2>
 
-        <a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit?usp=sharing">This
-          master spreadsheet </a> contains all the equipment needed and how to obtain them. We detail the equipment and
-        objects below.
-        </p>
+        <div class="content has-text-justified">
+          The equipment used in our project is entirely available online or 3D printed. We have included the links to
+          purchase the equipment and 3D printing filament as well as the CAD files below.
 
-        <h3 class="title is-4">Purchased Equipment</h3>
-        <a
-          href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=445569452&range=A1">
-          Links to purchase the required equipment can be found here. </a>
+          <a
+            href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit?usp=sharing">This
+            master spreadsheet </a> contains all the equipment needed and how to obtain them. We detail the equipment
+          and
+          objects below.
+          </p>
 
-        <br>
-        <br>
-        This includes cameras, bin, spray paint for the bin, and filaments for the 3D printer.
+          <h3 class="title is-4">Purchased Equipment</h3>
+          <a
+            href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=445569452&range=A1">
+            Links to purchase the required equipment can be found here. </a>
 
-        <h3 class="title is-4"> Single-Object Manipulation Objects</h3>
-        <!-- We designed a series of basic assembly task boards with 9 slots for different shaped pieces and different sizes
+          <br>
+          <br>
+          This includes cameras, bin, spray paint for the bin, and filaments for the 3D printer.
+
+          <h3 class="title is-4"> Single-Object Manipulation Objects</h3>
+          <!-- We designed a series of basic assembly task boards with 9 slots for different shaped pieces and different sizes
         as well as 54 pegs of different shapes, sizes, lengths, and colors. You can choose to print all or some of these
         suitable for your task. In addition, we designed an environment fixture for reorienting the pieces before
         insertion if they are grasped horizontally. -->
 
-        Refer to <a href="../static/doc/FMB Shape and Color Number Reference Sheet - Google Docs.pdf">color/shape
-          name and number reference sheet </a> for the name and number assigned to each shape and color throughout our
-        project.
+          Refer to <a href="../static/doc/FMB Shape and Color Number Reference Sheet - Google Docs.pdf">color/shape
+            name and number reference sheet </a> for the name and number assigned to each shape and color throughout our
+          project.
 
 
-        <div class="image-container" style="display: flex">
-          <div class="image-block">
-            <img src="../static/images/assembly_board.png" alt="Image A" class="equal-height-image">
-            <p class="caption"> <a
-              href="../static/files/peg_board.step" download="peg_board.step">
-                Assembly Boards</a> <br /> Set of 3 boards with 9 holes each. Each board has different sized holes</p>
-          </div>
-          <div class="image-block">
-            <img src="../static/images/insertion_pieces.png" alt="Image B" class="equal-height-image">
-            <p class="caption"><a
-              href="../static/files/peg.step" download="peg.step">
-              Assembly Objects</a> <br />
-              Set of pegs of three sizes, two lengths, and 9 shapes each for a total of 54 pegs.</p>
-          </div>
-          <div class="image-block">
-            <img src="../static/images/environment_fixture.png" alt="Image B" class="equal-height-image">
-            <p class="caption"><a
-                href="../static/files/peg fixture.step" download="fixture.step">
-                Environment Fixture </a> <br />
+          <div class="image-container" style="display: flex">
+            <div class="image-block">
+              <img src="../static/images/assembly_board.png" alt="Image A" class="equal-height-image">
+              <p class="caption" style="text-align: center;"> <a href="../static/files/peg_board.step"
+                  download="peg_board.step">
+                  Assembly Boards</a> <br /> Set of 3 boards with 9 holes each. Each board has different sized holes</p>
+            </div>
+            <div class="image-block">
+              <img src="../static/images/insertion_pieces.png" alt="Image B" class="equal-height-image">
+              <p class="caption" style="text-align: center;"><a href="../static/files/peg.step" download="peg.step">
+                  Assembly Objects</a> <br />
+                Set of pegs of three sizes, two lengths, and 9 shapes each for a total of 54 pegs.</p>
+            </div>
+            <div class="image-block">
+              <img src="../static/images/environment_fixture.png" alt="Image B" class="equal-height-image">
+              <p class="caption" style="text-align: center;"><a href="../static/files/peg fixture.step"
+                  download="fixture.step">
+                  Environment Fixture </a> <br />
                 Environment reorienting fixture for Single-Object Task pieces</p>
-              </div>
-        </div>
+            </div>
+          </div>
 
-        <h3 class="title is-4"> Multi-Object Manipulation Objects</h3>
+          <h3 class="title is-4"> Multi-Object Manipulation Objects</h3>
 
-        <!-- In addition to the Single-Object objects, we also introduce three Multi-Object Manipulation Objects where
+          <!-- In addition to the Single-Object objects, we also introduce three Multi-Object Manipulation Objects where
         interlocking pieces need to be assembled in a specific order. -->
 
-        <div class="image-container" style="display: flex">
-          <div class="image-block">
-            <img src="../static/images/board 1.png" alt="Image A" class="equal-height-image">
-            <p class="caption"> <a href="../static/files/Board 1.step" download="Board 1.step">
-              Assembly 1</a> <br />
-            </p>
+          <div class="image-container" style="display: flex">
+            <div class="image-block">
+              <img src="../static/images/board 1.png" alt="Image A" class="equal-height-image">
+              <p class="caption" style="text-align: center;"> <a href="../static/files/Board 1.step"
+                  download="Board 1.step">
+                  Assembly 1</a>
+              </p>
+            </div>
+            <div class="image-block">
+              <img src="../static/images/board 2.png" alt="Image B" class="equal-height-image">
+              <p class="caption" style="text-align: center;"><a href="../static/files/Board 2.step"
+                  download="Board 2.step">
+                  Assembly 2</a>
+              </p>
+            </div>
+            <div class="image-block">
+              <img src="../static/images/board 3.png" alt="Image B" class="equal-height-image">
+              <p class="caption" style="text-align: center;"><a href="../static/files/Board 3.step"
+                  download="Board 3.step">
+                  Assembly 3 </a>
+              </p>
+            </div>
+            <div class="image-block">
+              <img src="../static/images/fixture 2.png" alt="Image B" class="equal-height-image">
+              <p class="caption" style="text-align: center;"><a href="../static/files/board fixture.step">
+                  Environment Fixture </a>
+            </div>
           </div>
-          <div class="image-block">
-            <img src="../static/images/board 2.png" alt="Image B" class="equal-height-image">
-            <p class="caption"><a
-                href="../static/files/Board 2.step" download="Board 2.step">
-                Assembly 2</a> <br />
-            </p>
+
+          <h3 class="title is-4"> Camera Mounts </h3>
+
+          <!-- 3D Printed Pieces -->
+          We designed two types of camera mounts for the RealSense D405 cameras. One is used to mount the camera in a
+          fix
+          position pointing at the workspace, while the other is mounted between the flange and the gripper of the
+          Franka
+          Panda arm for a eye-in-hand view.
+
+
+          <div class="image-container" style="display: flex">
+            <div>
+              <img src="../static/images/wrist_mount.jpg" alt="Image A" style="width:100%">
+              <p class="caption" style="text-align: center;"> <a href="../static/files/Franka D405 Wrist Mount.step"
+                  download="wrist_mount.step">
+                  Wrist Camera Mount</a> <br /> </p>
+            </div>
+            <div>
+              <img src="../static/images/side_mount.png" alt="Image B" style="width:85%">
+              <p class="caption" style="text-align: center;"> <a href="../static/files/D405 Side Mount.step"
+                  download="side_mount.step">
+                  Side Camera mount</a> <br />
+              </p>
+            </div>
           </div>
-          <div class="image-block">
-            <img src="../static/images/board 3.png" alt="Image B" class="equal-height-image">
-            <p class="caption"><a
-                href="../static/files/Board 3.step" download="Board 3.step">
-                Assembly 3 </a> <br />
-            </p>
-          </div>
-          <div class="image-block">
-            <img src="../static/images/fixture 2.png" alt="Image B" class="equal-height-image">
-            <p class="caption"><a
-                href="../static/files/board fixture.step">
-                Environment Fixture </a> <br />
-              Environment reorienting fixture for Multi-Object Task pieces</p>
-          </div>
-        </div>
-
-        <h3 class="title is-4"> Camera Mounts </h3>
-
-        <!-- 3D Printed Pieces -->
-        We designed two types of camera mounts for the RealSense D405 cameras. One is used to mount the camera in a fix
-        position pointing at the workspace, while the other is mounted between the flange and the gripper of the Franka
-        Panda arm for a eye-in-hand view.
-
-
-        <div class="image-container" style="display: flex">
-          <div>
-            <img src="../static/images/wrist_mount.jpg" alt="Image A" style="width:100%">
-            <p class="caption"> <a
-              href="../static/files/Franka D405 Wrist Mount.step" download="wrist_mount.step">
-                Wrist Mount</a> <br /> </p>
-          </div>
-          <div>
-            <img src="../static/images/side_mount.png" alt="Image B" style="width:85%">
-            <p class="caption"> <a
-              href="../static/files/D405 Side Mount.step"  download="side_mount.step">
-                mount</a> <br />
-            </p>
-          </div>
-        </div>
 
 
 
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <!-- <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a> -->
-      <!-- <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a> -->
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            If you have any questions about this project, please contact us at functionalmanipulationdataset@gmail.com
-          </p>
-          <p>
-            All data is provided under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons
-              Attribution 4.0 International License </a>.
-          </p>
-          <p>
-            This website is licensed under a <a rel="license"
-              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-              Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source code</a>
-            of the website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
         </div>
       </div>
     </div>
   </div>
-</footer>
+  </section>
 
-<script>
-  // replay button animation
-  new Image().src = '../icons/replay.svg' // preload
+  <section class="section" id="Files">
+    <div class="container is-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" style="text-align: left;" id="workspace">Workspace Setup</h2>
 
-  const playButtons = document.querySelectorAll('.play-button');
-  playButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      button.parentElement.parentElement.querySelectorAll('video').forEach((video) => {
-        try {
-          video.fastSeek(0);
-        } catch (error) {
-          video.currentTime = 0;
-        }
-        video.play();
-      });
-      const img = button.querySelector('img');
-      img.src = '../icons/replay.svg';
+          <div class="image-container" style="text-align:center">
+            <div>
+              <img src="../static/images/workspace_setup_1.png" alt="Image A" style="width:50%">
+            </div>
+          </div>
+          <div class="content has-text-justified">
 
-      const text = button.querySelector('div');
-      text.innerText = 'Replay';
+            Once all the necessary materials have been obtained, you can set up the workspace for the robot according to
+            the <strong> instructions and dimensions in the diagram below. </strong>
 
-      button.classList.remove('replay');
-      void button.offsetWidth;
-      button.classList.add('replay');
-    });
-  });
+            <ol>
+              <li>Fix the bin 12 cm in front of the robot base.</li>
+              <li>Fix the reorientation fixture onto the bin according to the dimensions in the diagram.</li>
+              <li>Mount side camera posts outside the bin according to the dimensions in the diagram.</li>
+              <li>Fix the 3D-printed side camera mount onto the interior side of the post with the bottom edge of the
+                mount 15cm above the bottom of the bin. </li>
+              <li> Mount the wrist camera between the flange and gripper of the Franka arm. </li>
+            </ol>
 
-  // View Random Trajectory Widget
-  var trajLinks;
-  fetch("traj_links.csv")
-    .then(response => response.text())
-    .then(text => trajLinks = text.split(/\r\n|\n/))
-    .then(sample);
+          </div>
 
-  const prefix = "https://rail.eecs.berkeley.edu/datasets/bridge_release/";
-  const firstImage = document.querySelector("#first_image");
-  const lastImage = document.querySelector("#last_image");
-  const annotation = document.querySelector("#annotation");
-  function sample() {
-    if (typeof trajLinks === 'undefined') return;
+          <!-- TODO: insert image -->
+        </div>
+      </div>
+    </div>
+    <div class="image-container" style="text-align:center">
+      <div>
+        <img src="../static/images/workspace_setup_2.png" alt="Image A" style="width:50%">
+      </div>
+    </div>
+    </div>
+  </section>
 
-    firstImage.src = 'icons/dots.jpg';
-    lastImage.src = 'icons/dots.jpg';
-    annotation.innerText = 'loading...';
 
-    const index = Math.floor(Math.random() * trajLinks.length);
-    const links = trajLinks[index].split(",");
 
-    firstImage.src = prefix + links[0];
-    lastImage.src = prefix + links[1];
-    annotation.innerText = links[2];
-  }
+  <section class="section" id="Files">
+    <div class="container is-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" style="text-align: left;" id="eval">Evaluation Procedure</h2>
+          <div class="content has-text-justified">
+            Evaluation procedure coming soon.
+          </div>
 
-  const sampleButton = document.querySelector('#sample-button');
-  sampleButton.addEventListener('click', () => {
-    if (firstImage.src.includes('dots.jpg') || lastImage.src.includes('dots.jpg')) return;
+          <!-- TODO: insert image -->
+        </div>
+      </div>
+    </div>
 
-    sample();
 
-    sampleButton.classList.remove('replay');
-    void sampleButton.offsetWidth;
-    sampleButton.classList.add('replay');
-  });
-</script>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              If you have any questions about this project, please contact us at functionalmanipulationdataset@gmail.com
+            </p>
+            <p>
+              All data is provided under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons
+                Attribution 4.0 International License </a>.
+            </p>
+            <p>
+              This website was built off of<a href="https://github.com/nerfies/nerfies.github.io">nerfies</a> source
+              code and
+              the trajectory visualizer was adapted from <a href="https://rail-berkeley.github.io/bridgedata/">Bridge
+                Data V2</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

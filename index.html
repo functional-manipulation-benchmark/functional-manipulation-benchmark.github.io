@@ -2,6 +2,16 @@
 <html>
 
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WXK4VLVD');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta name="description" content="FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning">
   <meta name="keywords" content="FMB, Robotic">
@@ -41,7 +51,10 @@
 </head>
 
 <body>
-
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXK4VLVD" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -59,14 +72,14 @@
     </a>
 
     <a class="navbar-item" href=./files/index.html>
-      Material and CAD Files
+      Using FMB
     </a>
-    <a class="navbar-item" href=./setup/index.html>
+    <!-- <a class="navbar-item" href=./setup/index.html>
       Workspace Setup
     </a>
     <a class="navbar-item" href=./procedure/index.html>
       Evaluation Procedure
-    </a>
+    </a> -->
   </nav>
 
 
@@ -92,7 +105,6 @@
                 <a href="https://jeffreywu13579.github.io/">Jeffrey Wu</a>,</span>
               <span class="author-block">
                 <a href="http://people.eecs.berkeley.edu/~pabbeel/">Pieter Abbeel</a> and</span>
-
               <span class="author-block">
                 <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>
               </span>
@@ -127,12 +139,20 @@
                 </span>
                 <!-- Dataset Link. -->
                 <span class="link-block">
-                  <a href="https://rail.eecs.berkeley.edu/datasets/fmb/"
-                    class="external-link button is-normal is-rounded is-dark">
+                  <a href="dataset/index.html" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <img src="icons/database.png">
+                      <img src="icons/database.png" style="width: 65%;">
                     </span>
                     <span>Dataset</span>
+                  </a>
+                </span>
+                <!-- Benchmark Link. -->
+                <span class="link-block">
+                  <a href="files/index.html" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <img src="icons/robot.png" style="width: 90%;">
+                    </span>
+                    <span>Benchmark</span>
                   </a>
                 </span>
               </div>
@@ -232,14 +252,10 @@
               <div class="method">Wrist 1 View</div>
               <div class="method">Wrist 2 View</div>
               <div class="task" id="annotation_peg">loading...</div>
-              <div class="video"><video id="side_1_image_peg" preload="auto" style="max-width: 100%; height: 100%;"
-                  loop></video></div>
-              <div class="video"><video id="side_2_image_peg" preload="auto" style="max-width: 100%; height: 100%;"
-                  loop></video></div>
-              <div class="video"><video id="wrist_1_image_peg" preload="auto" style="max-width: 100%; height: 100%;"
-                  loop></video></div>
-              <div class="video"><video id="wrist_2_image_peg" preload="auto" style="max-width: 100%; height: 100%;"
-                  loop></video></div>
+              <div class="video"><video id="side_1_image_peg" preload="auto" loop></video></div>
+              <div class="video"><video id="side_2_image_peg" preload="auto" loop></video></div>
+              <div class="video"><video id="wrist_1_image_peg" preload="auto" loop></video></div>
+              <div class="video"><video id="wrist_2_image_peg" preload="auto" loop></video></div>
             </div>
           </div>
         </div>
@@ -277,14 +293,10 @@
                 <div class="method">Wrist 1 View</div>
                 <div class="method">Wrist 2 View</div>
                 <div class="task" id="annotation_board">loading...</div>
-                <div class="video"><video id="side_1_image_board" preload="auto"
-                    loop></video></div>
-                <div class="video"><video id="side_2_image_board" preload="auto"
-                    loop></video></div>
-                <div class="video"><video id="wrist_1_image_board" preload="auto"
-                    loop></video></div>
-                <div class="video"><video id="wrist_2_image_board" preload="auto"
-                    loop></video></div>
+                <div class="video"><video id="side_1_image_board" preload="auto" loop></video></div>
+                <div class="video"><video id="side_2_image_board" preload="auto" loop></video></div>
+                <div class="video"><video id="wrist_1_image_board" preload="auto" loop></video></div>
+                <div class="video"><video id="wrist_2_image_board" preload="auto" loop></video></div>
               </div>
             </div>
           </div>
@@ -296,17 +308,17 @@
           <!-- <img src="./static/images/Board filmstrip.jpg" alt="Overview"> -->
           <div class="content has-text-justified">
             All the objects in our benchmark are designed to be 3D printable. We provide the CAD files for all the
-            objects and links to material needed in the <a href="files/index.html">Material and
-              CAD files page</a>.
+            objects and links to material needed in the <a href="files/index.html#materials-cad-files">Material and
+              CAD Files</a> section.
             <br>
             <br>
             A detailed description on how to setup the workspace can be found in the <a
-              href="setup/index.html">Workspace Setup page</a>.
+              href="files/index.html#workspace">Workspace Setup</a> section.
 
             <br>
             <br>
             We also provide a detailed description of the evaluation procedure in the <a
-              href="procedure/index.html">Evaluation Procedure page</a>.
+              href="files/index.html#eval">Evaluation Procedure</a> section.
           </div>
         </div>
       </div>
@@ -370,7 +382,6 @@
     var trajLinksPeg;
     fetch("peg.csv")
       .then(response => response.text())
-      // .then(text => trajLinksPeg = text.split(/\r\n|\n/))
       .then(text => trajLinksPeg = text.split(/\r\n|\n/).filter(line => line.trim().length > 0 && line.split(",").length === 5))
       .then(sample_peg);
 
@@ -430,7 +441,6 @@
     var trajLinksBoard;
     fetch("board.csv")
       .then(response => response.text())
-      // .then(text => trajLinksBoard = text.split(/\r\n|\n/))
       .then(text => trajLinksBoard = text.split(/\r\n|\n/).filter(line => line.trim().length > 0 && line.split(",").length === 5))
       .then(sample_board);
 
