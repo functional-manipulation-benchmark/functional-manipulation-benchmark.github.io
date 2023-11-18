@@ -10,7 +10,7 @@ p {
 }
 
 .content-container {
-    max-width: 800px;
+    max-width: 1050px;
     margin: 0 auto;
 }
 
@@ -63,7 +63,7 @@ h3 {
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 200px));
+    grid-template-columns: repeat(5, minmax(0, 300px));
     justify-items: center;
     justify-content: center;
     align-items: center;
@@ -105,7 +105,7 @@ h3 {
 }
 
 .video-grid>.task#annotation {
-    font-size: 12pt;
+    font-size: 15pt;
 }
 .video-grid>.method {
     line-height: 1;
@@ -127,6 +127,7 @@ h3 {
 .video-grid>.video {
     border: 2pt solid black;
     border-radius: 1pt;
+    height: 100%;
 }
 
 .video-header {
@@ -217,7 +218,7 @@ a {
     }
 }
 
-#sample-button {
+#sample-button-peg {
     cursor: pointer;
     display: flex;
     margin-left: 1rem;
@@ -227,17 +228,44 @@ a {
     align-items: center;
 }
 
-#sample-button:active {
+#sample-button-peg:active {
     background-color: rgb(44, 177, 244, 0.5);
 }
 
-#sample-button>img {
+#sample-button-peg>img {
     width: 20px;
     height: 20px;
     margin-right: 3px;
 }
 
-#sample-button>div {
+#sample-button-peg>div {
+    margin-bottom: 1pt;
+    margin-right: 2pt;
+    font-family: "Open Sans", sans-serif;
+    font-size: 10pt;
+}
+
+#sample-button-board {
+    cursor: pointer;
+    display: flex;
+    margin-left: 1rem;
+    background-color: rgb(44, 177, 244);
+    border-radius: 5pt;
+    padding: 2pt 3pt;
+    align-items: center;
+}
+
+#sample-button-board:active {
+    background-color: rgb(44, 177, 244, 0.5);
+}
+
+#sample-button-board>img {
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+}
+
+#sample-button-board>div {
     margin-bottom: 1pt;
     margin-right: 2pt;
     font-family: "Open Sans", sans-serif;
@@ -252,4 +280,20 @@ a {
 .pie {
     display: flex;
     justify-content: center;
+}
+
+.equal-height-image {
+    max-height: 500px; /* Set the desired height */
+    /* width: auto; */
+    object-fit: contain; /* This will ensure the images cover the area without distorting */
+    /* gap: 0.5rem; */
+}
+
+.image-block {
+    margin-right: 1px; /* Adjust the value to get the desired gap */
+}
+
+/* Remove margin from the last image block */
+.image-block:last-child {
+    margin-right: 0;
 }

@@ -45,12 +45,11 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="false"></span>
-        <span aria-hidden="false"></span>
-        <span aria-hidden="false"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
     </div>
-  </nav>
 
     <a class="navbar-item" href=./index.html>
       Home
@@ -58,9 +57,7 @@
     <a class="navbar-item" href=./dataset/index.html>
       Dataset
     </a>
-    <a class="navbar-item" href=./code/index.html>
-      Code
-    </a>
+
     <a class="navbar-item" href=./files/index.html>
       Material and CAD Files
     </a>
@@ -75,7 +72,7 @@
 
   <section class="hero">
     <div class="hero-body">
-      <div class="container is-max-desktop">
+      <div class="container is-widescreen">
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">FMB: A Functional Manipulation Benchmark for Generalizable Robotic
@@ -129,6 +126,15 @@
                   </a>
                 </span>
                 <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="https://rail.eecs.berkeley.edu/datasets/fmb/"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <img src="icons/database.png">
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
               </div>
 
             </div>
@@ -136,17 +142,13 @@
         </div>
       </div>
     </div>
-  </section>
 
-
-
-  <section class="section">
-    <div class="container is-max-desktop">
+    <div class="container is-widescreen">
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">A Functional Manipulation Benchmark for Generalizable Robotic Learning</h2>
-          <img src="./static/images/overall.jpg" alt="Overview">
+          <!-- <h2 class="title is-3">A Functional Manipulation Benchmark for Generalizable Robotic Learning</h2> -->
+          <img src="./static/images/FMB Objects.jpg" alt="Overview">
           <div class="content has-text-justified">
             Our benchmark for studying robotic learning for functional manipulation consists of a variety of easily
             reproducible 3D printed objects, each one requiring a sequence of grasping, reorientation, and assembly
@@ -160,7 +162,7 @@
       <!--/ Abstract. -->
 
       <!-- Paper video. -->
-      <div class="columns is-centered has-text-centered">
+      <!-- <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Video</h2>
           <div class="publication-video">
@@ -170,38 +172,145 @@
               allowfullscreen></iframe>
           </div>
         </div>
-      </div>
+      </div> -->
       <!--/ Paper video. -->
     </div>
   </section>
 
   <!-- TODO: embed google survey -->
 
-  <div class="content-container">
-    <div class="video-container">
-        <div class="video-header">
-            <h3>View a Random Trajectory</h3>
-            <div id="sample-button">
+  <section class="section">
+    <div class="container is-widescreen">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Dataset Overview</h2>
+          <img src="./static/images/pie chart 2.png" alt="Overview">
+          <div class="content has-text-justified">
+            Our dataset consists of objects in diverse appearance and geometry. It requires multi-stage
+            and multi-modal fine motor skills to successfully assemble the pegs onto a unfixed board in
+            a randomized scene. We collected a total of 22,550 trajectories across two different tasks on
+            a Franka Panda arm. We record the trajectories from 2 global views and 2 wrist views. Each view
+            contains both RGB and depth map.
+            <br>
+            <br>
+            Visit the <a href="dataset/index.html">dataset page</a> for more detail and links to download the dataset.
+          </div>
+        </div>
+      </div>
+
+      <div class="container is-widescreen">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h3 class="title is-4">Single-Object Multi-Stage Manipulation Task</h3>
+            <img src="./static/images/Single peg film strip.jpg" alt="Overview">
+            <div class="content has-text-justified">
+              The Single-Object Multi-Stage Manipulation Task consists of 54 different assembly objects and 3 assembly
+              boards of various shapes,sizes, and colors. The robot has to grasp the object, perform a series of
+              reorientation actions with an environment fixture, then insert into the board. The time horizon for this
+              task ranges from 20 to 40 seconds. To make the task managable, we break down each
+              end-to-end trajectory into seperate primitives such as grasp, place on fixture, regrasp, rotate, move to
+              board, and insert. Examples of each trajectories can be visualized below.
+            </div>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="video-container" id="peg-sampler">
+            <div class="video-header">
+              <h3>View a Random Trajectory</h3>
+              <div id="sample-button-peg">
                 <img src="icons/replay.svg" />
                 <div>Sample</div>
+              </div>
             </div>
+            <div class="video-grid lang">
+              <div class="method">Primitive</div>
+              <div class="method">Side 1 View</div>
+              <div class="method">Side 2 View</div>
+              <div class="method">Wrist 1 View</div>
+              <div class="method">Wrist 2 View</div>
+              <div class="task" id="annotation_peg">loading...</div>
+              <div class="video"><video id="side_1_image_peg" preload="auto" style="max-width: 100%; height: 100%;"
+                  loop></video></div>
+              <div class="video"><video id="side_2_image_peg" preload="auto" style="max-width: 100%; height: 100%;"
+                  loop></video></div>
+              <div class="video"><video id="wrist_1_image_peg" preload="auto" style="max-width: 100%; height: 100%;"
+                  loop></video></div>
+              <div class="video"><video id="wrist_2_image_peg" preload="auto" style="max-width: 100%; height: 100%;"
+                  loop></video></div>
+            </div>
+          </div>
         </div>
-        <div class="video-grid lang">
-            <div class="method">Primitive</div>
-            <div class="method">Side 1 View</div>
-            <div class="method">Side 1 View</div>
-            <div class="method">Wrist 1 View</div>
-            <div class="method">Wrist 2 View</div>
-            <div class="task" id="annotation">loading...</div>
-            <div class="video"><video id="side_1_image" preload="auto" style="max-width: 100%; height: 100%;" loop></video></div>
-            <div class="video"><video id="side_2_image"  preload="auto" style="max-width: 100%; height: 100%;" loop></video></div>
-            <div class="video"><video id="wrist_1_image"  preload="auto" style="max-width: 100%; height: 100%;" loop></video></div>
-            <div class="video"><video id="wrist_2_image"  preload="auto" style="max-width: 100%; height: 100%;" loop></video></div>
+      </div>
+
+
+      <div class="container is-widescreen">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h3 class="title is-4">Multi-Object Multi-Stage Manipulation Task</h3>
+            <img src="./static/images/Board filmstrip.jpg" alt="Overview">
+            <div class="content has-text-justified">
+              The Multi-Object Multi-Stage Manipulation Task consists of 3 sets of assembly object. Each set contains 4
+              interlocking objects that need to be assembled together sequentially using the same primitives as the
+              previous task. The time horizon for this task is even longer, and can easily exceed 100 seconds to fully
+              assemble one board. Examples of each trajectories can be visualized below.
+            </div>
+          </div>
         </div>
-    </div>
-  </div>
-  
-  
+        <div class="container is-widescreen">
+          <div class="content-container">
+            <div class="video-container" id="board-sampler">
+              <div class="video-header">
+                <h3>View a Random Trajectory</h3>
+                <div id="sample-button-board">
+                  <img src="icons/replay.svg" />
+                  <div>Sample</div>
+                </div>
+              </div>
+              <div class="video-grid lang">
+                <div class="method">Primitive</div>
+                <div class="method">Side 1 View</div>
+                <div class="method">Side 2 View</div>
+                <div class="method">Wrist 1 View</div>
+                <div class="method">Wrist 2 View</div>
+                <div class="task" id="annotation_board">loading...</div>
+                <div class="video"><video id="side_1_image_board" preload="auto"
+                    loop></video></div>
+                <div class="video"><video id="side_2_image_board" preload="auto"
+                    loop></video></div>
+                <div class="video"><video id="wrist_1_image_board" preload="auto"
+                    loop></video></div>
+                <div class="video"><video id="wrist_2_image_board" preload="auto"
+                    loop></video></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h3 class="title is-4">Reproducing the Benchmark</h3>
+          <!-- <img src="./static/images/Board filmstrip.jpg" alt="Overview"> -->
+          <div class="content has-text-justified">
+            All the objects in our benchmark are designed to be 3D printable. We provide the CAD files for all the
+            objects and links to material needed in the <a href="files/index.html">Material and
+              CAD files page</a>.
+            <br>
+            <br>
+            A detailed description on how to setup the workspace can be found in the <a
+              href="setup/index.html">Workspace Setup page</a>.
+
+            <br>
+            <br>
+            We also provide a detailed description of the evaluation procedure in the <a
+              href="procedure/index.html">Evaluation Procedure page</a>.
+          </div>
+        </div>
+      </div>
+  </section>
 
 
 
@@ -220,16 +329,10 @@
                 Attribution 4.0 International License </a>.
             </p>
             <p>
-              This website is licensed under a <a rel="license"
-                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-            <p>
-              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
-                code</a> of the website,
-              we just ask that you link back to this page in the footer.
-              Please remember to remove the analytics code included in the header of the website which
-              you do not want on your website.
+              This website was built off of<a href="https://github.com/nerfies/nerfies.github.io">nerfies</a> source
+              code and
+              the trajectory visualizer was adapted from <a href="https://rail-berkeley.github.io/bridgedata/">Bridge
+                Data V2</a>
             </p>
           </div>
         </div>
@@ -240,89 +343,150 @@
   <script>
     // replay button animation
     new Image().src = 'icons/replay.svg' // preload
-  
+
     const playButtons = document.querySelectorAll('.play-button');
     playButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-            button.parentElement.parentElement.querySelectorAll('video').forEach((video) => {
-                try {
-                    video.fastSeek(0);
-                } catch (error) {
-                    video.currentTime = 0;
-                }
-                video.play();
-            });
-            const img = button.querySelector('img');
-            img.src = 'icons/replay.svg';
-  
-            const text = button.querySelector('div');
-            text.innerText = 'Replay';
-  
-            button.classList.remove('replay');
-            void button.offsetWidth;
-            button.classList.add('replay');
+      button.addEventListener('click', () => {
+        button.parentElement.parentElement.querySelectorAll('video').forEach((video) => {
+          try {
+            video.fastSeek(0);
+          } catch (error) {
+            video.currentTime = 0;
+          }
+          video.play();
         });
+        const img = button.querySelector('img');
+        img.src = 'icons/replay.svg';
+
+        const text = button.querySelector('div');
+        text.innerText = 'Replay';
+
+        button.classList.remove('replay');
+        void button.offsetWidth;
+        button.classList.add('replay');
+      });
     });
-  // View Random Trajectory Widget
-  var trajLinks;
-  fetch("peg.csv")
+    // View Random Trajectory Widget
+    var trajLinksPeg;
+    fetch("peg.csv")
       .then(response => response.text())
-      // .then(text => trajLinks = text.split(/\r\n|\n/))
-      .then(text => trajLinks = text.split(/\r\n|\n/).filter(line => line.trim().length > 0 && line.split(",").length === 5))
-      .then(sample);
+      // .then(text => trajLinksPeg = text.split(/\r\n|\n/))
+      .then(text => trajLinksPeg = text.split(/\r\n|\n/).filter(line => line.trim().length > 0 && line.split(",").length === 5))
+      .then(sample_peg);
 
 
-  
-  const prefix = "peg_example_trajectory_mp4/";
-  const side1Image = document.querySelector("#side_1_image");
-  const side2Image = document.querySelector("#side_2_image");
-  const wrist1Image = document.querySelector("#wrist_1_image");
-  const wrist2Image = document.querySelector("#wrist_2_image");
-  const annotation = document.querySelector("#annotation");
-  function sample() {
-      if (typeof trajLinks === 'undefined') return;
-    
-      side1Image.src = '';
-      side2Image.src = '';
-      wrist1Image.src = '';
-      wrist2Image.src = '';
-      annotation.innerText = 'asd...';
-  
-      const index = Math.floor(Math.random() * trajLinks.length);
-      const links = trajLinks[index].split(",");
-  
-      side1Image.src = prefix + links[0];
-      // console.log('side1Image src:', side1Image.src);
-      side1Image.load();
-      side1Image.play();
 
-      side2Image.src = prefix + links[1];
-      side2Image.load();
-      side2Image.play();
+    const prefixPeg = "peg_example_trajectory_mp4/";
+    const side1ImagePeg = document.querySelector("#side_1_image_peg");
+    const side2ImagePeg = document.querySelector("#side_2_image_peg");
+    const wrist1ImagePeg = document.querySelector("#wrist_1_image_peg");
+    const wrist2ImagePeg = document.querySelector("#wrist_2_image_peg");
+    const annotationPeg = document.querySelector("#annotation_peg");
+    function sample_peg() {
+      if (typeof trajLinksPeg === 'undefined') return;
 
-      wrist1Image.src = prefix + links[2];
-      wrist1Image.load();
-      wrist1Image.play();
+      side1ImagePeg.src = '';
+      side2ImagePeg.src = '';
+      wrist1ImagePeg.src = '';
+      wrist2ImagePeg.src = '';
+      annotationPeg.innerText = 'asd...';
 
-      wrist2Image.src = prefix + links[3];
-      wrist2Image.load();
-      wrist2Image.play();
+      const index = Math.floor(Math.random() * trajLinksPeg.length);
+      const links = trajLinksPeg[index].split(",");
 
-      annotation.innerText = links[4];
-  }
-  
-  const sampleButton = document.querySelector('#sample-button');
-  sampleButton.addEventListener('click', () => {
-      if (wrist2Image.readyState === 0) return; // Check if video is ready
-  
-      sample();
-  
-      sampleButton.classList.remove('replay');
-      void sampleButton.offsetWidth;
-      sampleButton.classList.add('replay');
-  });
+      side1ImagePeg.src = prefixPeg + links[0];
+      // console.log('side1ImagePeg src:', side1ImagePeg.src);
+      side1ImagePeg.load();
+      side1ImagePeg.play();
+
+      side2ImagePeg.src = prefixPeg + links[1];
+      side2ImagePeg.load();
+      side2ImagePeg.play();
+
+      wrist1ImagePeg.src = prefixPeg + links[2];
+      wrist1ImagePeg.load();
+      wrist1ImagePeg.play();
+
+      wrist2ImagePeg.src = prefixPeg + links[3];
+      wrist2ImagePeg.load();
+      wrist2ImagePeg.play();
+
+      annotationPeg.innerText = links[4];
+    }
+
+    const sampleButtonPeg = document.querySelector('#sample-button-peg');
+    sampleButtonPeg.addEventListener('click', () => {
+      if (wrist2ImagePeg.readyState === 0) return; // Check if video is ready
+
+      sample_peg();
+
+      sampleButtonPeg.classList.remove('replay');
+      void sampleButtonPeg.offsetWidth;
+      sampleButtonPeg.classList.add('replay');
+    });
+
+    // -------------------------------------------------------------Board
+
+    var trajLinksBoard;
+    fetch("board.csv")
+      .then(response => response.text())
+      // .then(text => trajLinksBoard = text.split(/\r\n|\n/))
+      .then(text => trajLinksBoard = text.split(/\r\n|\n/).filter(line => line.trim().length > 0 && line.split(",").length === 5))
+      .then(sample_board);
+
+
+
+    const prefixBoard = "board_example_trajectory_mp4/";
+    const side1ImageBoard = document.querySelector("#side_1_image_board");
+    const side2ImageBoard = document.querySelector("#side_2_image_board");
+    const wrist1ImageBoard = document.querySelector("#wrist_1_image_board");
+    const wrist2ImageBoard = document.querySelector("#wrist_2_image_board");
+    const annotationBoard = document.querySelector("#annotation_board");
+    function sample_board() {
+      if (typeof trajLinksBoard === 'undefined') return;
+
+      side1ImageBoard.src = '';
+      side2ImageBoard.src = '';
+      wrist1ImageBoard.src = '';
+      wrist2ImageBoard.src = '';
+      annotationBoard.innerText = 'asd...';
+
+      const index = Math.floor(Math.random() * trajLinksBoard.length);
+      const links = trajLinksBoard[index].split(",");
+
+      side1ImageBoard.src = prefixBoard + links[0];
+      // console.log('side1ImageBoard src:', side1ImageBoard.src);
+      side1ImageBoard.load();
+      side1ImageBoard.play();
+
+      side2ImageBoard.src = prefixBoard + links[1];
+      side2ImageBoard.load();
+      side2ImageBoard.play();
+
+      wrist1ImageBoard.src = prefixBoard + links[2];
+      wrist1ImageBoard.load();
+      wrist1ImageBoard.play();
+
+      wrist2ImageBoard.src = prefixBoard + links[3];
+      wrist2ImageBoard.load();
+      wrist2ImageBoard.play();
+
+      annotationBoard.innerText = links[4];
+    }
+
+    const sampleButtonBoard = document.querySelector('#sample-button-board');
+    sampleButtonBoard.addEventListener('click', () => {
+      if (wrist2ImageBoard.readyState === 0) return; // Check if video is ready
+
+      sample_board();
+
+      sampleButtonBoard.classList.remove('replay');
+      void sampleButtonBoard.offsetWidth;
+      sampleButtonBoard.classList.add('replay');
+    });
+
   </script>
-  
+
 </body>
 
 </html>

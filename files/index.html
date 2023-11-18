@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning">
+  <meta name="description" content="FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning">
   <meta name="keywords" content="FMB, Robotic">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FMB: A Functional Manipulation Benchmark for Generalizable Robotic Learning</title>
 
-<!--   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -21,16 +19,14 @@
 
     gtag('config', 'G-PYVRSFMDRL');
   </script>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link rel="stylesheet" href="../main.css">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="../static/css/bulma.min.css">
   <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="../static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
@@ -55,9 +51,6 @@
   <a class="navbar-item" href=../dataset/index.html>
     Dataset
   </a>
-  <a class="navbar-item" href=../code/index.html>
-    Code
-  </a>
   <a class="navbar-item" href=../files/index.html>
     Material and CAD Files
   </a>
@@ -68,85 +61,128 @@
     Evaluation Procedure
   </a>
 </nav>
+<br>
+<div class="container is-widescreen">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3"style="text-align: left;">Material and CAD Files</h2>
 
-<section class="section" id="Files">
-  <div class="columns is-centered">
-    <div class="column is-full-width">
-      <h2 class="title is-3">Material and CAD Files</h2>
+      <div class="content has-text-justified">
+        The equipment used in our project is entirely available online or 3D printed. We have included the links to
+        purchase the equipment and 3D printing filament as well as the CAD files below.
 
-      <div class="content has-text-justified"
-        <p>
-          The equipment used in our project is entirely available online or 3D printed. We have included the links to purchase the equipment and 3D printing filament as well as the CAD files below. 
-
-          <a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit?usp=sharing">This master spreadsheet </a> contains all the equipment needed and how to obtain them. Each section of the spreadsheet is detailed below. 
+        <a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit?usp=sharing">This
+          master spreadsheet </a> contains all the equipment needed and how to obtain them. We detail the equipment and objects below.
         </p>
 
-      <h3 class="title is-4">Purchased Equipment</h3>
-        <a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=445569452&range=A1"> Links to purchase the required equipment can be found here. </a>
+        <h3 class="title is-4">Purchased Equipment</h3>
+        <a
+          href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=445569452&range=A1">
+          Links to purchase the required equipment can be found here. </a>
 
-      <h3 class="title is-4"> Basic Task Pieces</h3>
-      We designed a series of basic assembly task boards with 9 slots for different shaped pieces and different sizes as well as 54 pegs of different shapes, sizes, lengths, and colors. You can choose to print all or some of these suitable for your task. In addition, we designed an environment fixture for reorienting the pieces before insertion if they are grasped horizontally. 
+        <br>
+        <br>
+        This includes cameras, bin, spray paint for the bin, and filaments for the 3D printer.
 
-      Refer to <a https://docs.google.com/document/d/14jp37YcES9fKLRLuuB4xPy7HWZb-7hi8xv4HEAamd-E/edit?usp=sharing>color/shape name and number reference sheet </a> for the name and number assigned to each shape and color throughout our project. 
+        <h3 class="title is-4"> Single-Object Manipulation Objects</h3>
+        <!-- We designed a series of basic assembly task boards with 9 slots for different shaped pieces and different sizes
+        as well as 54 pegs of different shapes, sizes, lengths, and colors. You can choose to print all or some of these
+        suitable for your task. In addition, we designed an environment fixture for reorienting the pieces before
+        insertion if they are grasped horizontally. -->
+
+        Refer to <a href="../static/doc/FMB Shape and Color Number Reference Sheet - Google Docs.pdf">color/shape
+          name and number reference sheet </a> for the name and number assigned to each shape and color throughout our
+        project.
 
 
-      <div class="image-container" style="display: flex">
-        <div>
-            <img src="../static/images/assembly_board.png" alt="Image A" style="width:85%">
-            <p class="caption"> <font size="2"><a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=467708506&range=1:1000"> Assembly Boards</a> <br /> Set of 3 boards with 9 holes each. Each board has different sized holes</p></font>
-        </div>
-        <div>
-            <img src="../static/images/insertion_pieces.png" alt="Image B" style="width:90%">
-            <p class="caption"> <font size="2"> <a href = "https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=0&range=E2:E55">Insertion Policies</a> <br />
-              Set of pegs of three sizes, two lengths, and 9 shapes each for a total of 54 pegs. </font></p>
-        </div>
-        <div>
-          <img src="../static/images/environment_fixture.png" alt="Image B" style="width:100%">
-          <p class="caption"><font size="2"> <a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=2034513620&range=1:1000"> Environment </a> <br />
-            1 Environment reorienting fixture</font></p>
+        <div class="image-container" style="display: flex">
+          <div class="image-block">
+            <img src="../static/images/assembly_board.png" alt="Image A" class="equal-height-image">
+            <p class="caption"> <a
+                href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=467708506&range=1:1000">
+                Assembly Boards</a> <br /> Set of 3 boards with 9 holes each. Each board has different sized holes</p>
           </div>
-    </div>
+          <div class="image-block">
+            <img src="../static/images/insertion_pieces.png" alt="Image B" class="equal-height-image">
+            <p class="caption"><a
+                href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=0&range=E2:E55">
+                Assembly Objects</a> <br />
+              Set of pegs of three sizes, two lengths, and 9 shapes each for a total of 54 pegs.</p>
+          </div>
+          <div class="image-block">
+            <img src="../static/images/environment_fixture.png" alt="Image B" class="equal-height-image">
+            <p class="caption"><a
+                href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=2034513620&range=1:1000">
+                Environment Fixture </a> <br />
+              1 environment fixture for reorienting objects</p>
+          </div>
+        </div>
 
-      <h3 class="title is-4"> Novel Objects for Grasping (Optional)</h3>
+        <h3 class="title is-4"> Multi-Object Manipulation Objects</h3>
 
-      In addition to the original 54 insertion pieces, we designed 5 novel objects of different sizes, shapes, and colors to study the generalization abilities of the grasp policy.
+        <!-- In addition to the Single-Object objects, we also introduce three Multi-Object Manipulation Objects where
+        interlocking pieces need to be assembled in a specific order. -->
 
-            <!-- <div class="image-container" style="display: flex">
-        <div>
-            <img src="../static/images/Novel_object_CAD_Files.png" alt="Image A" style="width:15%">
-            <p class="caption"> <font size="2"><a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=467708506&range=1:1000"> Assembly Boards</a> <br /> Set of 3 boards with 9 holes each. Each board has different sized holes</p></font>
-        </div> -->
-    </div>
+        <div class="image-container" style="display: flex">
+          <div class="image-block">
+            <img src="../static/images/board 1.png" alt="Image A" class="equal-height-image">
+            <p class="caption"> <a
+                href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=467708506&range=1:1000">
+                Assembly Boards</a> <br /> Set of 3 boards with 9 holes each. Each board has different sized holes</p>
+          </div>
+          <div class="image-block">
+            <img src="../static/images/board 2.png" alt="Image B" class="equal-height-image">
+            <p class="caption"><a
+                href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=0&range=E2:E55">
+                Assembly Objects</a> <br />
+              Set of pegs of three sizes, two lengths, and 9 shapes each for a total of 54 pegs.</p>
+          </div>
+          <div class="image-block">
+            <img src="../static/images/board 3.png" alt="Image B" class="equal-height-image">
+            <p class="caption"><a
+                href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=2034513620&range=1:1000">
+                Environment Fixture </a> <br />
+              1 Environment reorienting fixture</p>
+          </div>
+          <div class="image-block">
+            <img src="../static/images/fixture 2.png" alt="Image B" class="equal-height-image">
+            <p class="caption"><a
+                href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=2034513620&range=1:1000">
+                Environment Fixture </a> <br />
+              1 Environment reorienting fixture</p>
+          </div>
+        </div>
 
-      <h3 class="title is-4"> Complex Assembly Task (Optional) </h3>
+        <h3 class="title is-4"> Camera Mounts </h3>
 
-      In addition to the three basic insertion task boards, we introduce two more complex assembly boards where interlocking pieces need to be assembled in a specific order.
-
-      <h3 class="title is-4"> Camera Mounts </h3>
-
-      <!-- 3D Printed Pieces -->
-      
-
-      We designed two types of camera mounts for the RealSense D405 cameras. One is used to mount the camera in a fix position pointing at the workspace, while the other is mounted between the flange and the gripper of the Franka Panda arm for a eye-in-hand view.  
+        <!-- 3D Printed Pieces -->
+        We designed two types of camera mounts for the RealSense D405 cameras. One is used to mount the camera in a fix
+        position pointing at the workspace, while the other is mounted between the flange and the gripper of the Franka
+        Panda arm for a eye-in-hand view.
 
 
-      <div class="image-container" style="display: flex">
-        <div>
+        <div class="image-container" style="display: flex">
+          <div>
             <img src="../static/images/wrist_mount.jpg" alt="Image A" style="width:100%">
-            <p class="caption"> <font size="2"><a href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=1861955393&range=D2"> Wrist Mount</a> <br /> </p></font>
-        </div>
-        <div>
+            <p class="caption"> <a
+                href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=1861955393&range=D2">
+                Wrist Mount</a> <br /> </p>
+          </div>
+          <div>
             <img src="../static/images/side_mount.png" alt="Image B" style="width:85%">
-            <p class="caption"> <font size="2"> <a href = "https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=1861955393&range=D3">Side mount</a> <br /> </font></p>
+            <p class="caption"> <a
+                href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=1861955393&range=D3">Side
+                mount</a> <br />
+            </p>
+          </div>
         </div>
-    </div>
 
 
 
       </div>
     </div>
   </div>
-</div>
+  </div>
 </section>
 
 
@@ -177,16 +213,17 @@
             If you have any questions about this project, please contact us at functionalmanipulationdataset@gmail.com
           </p>
           <p>
-            All data is provided under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License </a>.
+            All data is provided under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons
+              Attribution 4.0 International License </a>.
           </p>
           <p>
             This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of the website,
+            This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source code</a>
+            of the website,
             we just ask that you link back to this page in the footer.
             Please remember to remove the analytics code included in the header of the website which
             you do not want on your website.
@@ -203,63 +240,64 @@
 
   const playButtons = document.querySelectorAll('.play-button');
   playButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-          button.parentElement.parentElement.querySelectorAll('video').forEach((video) => {
-              try {
-                  video.fastSeek(0);
-              } catch (error) {
-                  video.currentTime = 0;
-              }
-              video.play();
-          });
-          const img = button.querySelector('img');
-          img.src = '../icons/replay.svg';
-
-          const text = button.querySelector('div');
-          text.innerText = 'Replay';
-
-          button.classList.remove('replay');
-          void button.offsetWidth;
-          button.classList.add('replay');
+    button.addEventListener('click', () => {
+      button.parentElement.parentElement.querySelectorAll('video').forEach((video) => {
+        try {
+          video.fastSeek(0);
+        } catch (error) {
+          video.currentTime = 0;
+        }
+        video.play();
       });
+      const img = button.querySelector('img');
+      img.src = '../icons/replay.svg';
+
+      const text = button.querySelector('div');
+      text.innerText = 'Replay';
+
+      button.classList.remove('replay');
+      void button.offsetWidth;
+      button.classList.add('replay');
+    });
   });
 
   // View Random Trajectory Widget
   var trajLinks;
   fetch("traj_links.csv")
-      .then(response => response.text())
-      .then(text => trajLinks = text.split(/\r\n|\n/))
-      .then(sample);
+    .then(response => response.text())
+    .then(text => trajLinks = text.split(/\r\n|\n/))
+    .then(sample);
 
   const prefix = "https://rail.eecs.berkeley.edu/datasets/bridge_release/";
   const firstImage = document.querySelector("#first_image");
   const lastImage = document.querySelector("#last_image");
   const annotation = document.querySelector("#annotation");
   function sample() {
-      if (typeof trajLinks === 'undefined') return;
+    if (typeof trajLinks === 'undefined') return;
 
-      firstImage.src = 'icons/dots.jpg';
-      lastImage.src = 'icons/dots.jpg';
-      annotation.innerText = 'loading...';
+    firstImage.src = 'icons/dots.jpg';
+    lastImage.src = 'icons/dots.jpg';
+    annotation.innerText = 'loading...';
 
-      const index = Math.floor(Math.random() * trajLinks.length);
-      const links = trajLinks[index].split(",");
+    const index = Math.floor(Math.random() * trajLinks.length);
+    const links = trajLinks[index].split(",");
 
-      firstImage.src = prefix + links[0];
-      lastImage.src = prefix + links[1];
-      annotation.innerText = links[2];
+    firstImage.src = prefix + links[0];
+    lastImage.src = prefix + links[1];
+    annotation.innerText = links[2];
   }
 
   const sampleButton = document.querySelector('#sample-button');
   sampleButton.addEventListener('click', () => {
-      if (firstImage.src.includes('dots.jpg') || lastImage.src.includes('dots.jpg')) return;
+    if (firstImage.src.includes('dots.jpg') || lastImage.src.includes('dots.jpg')) return;
 
-      sample();
+    sample();
 
-      sampleButton.classList.remove('replay');
-      void sampleButton.offsetWidth;
-      sampleButton.classList.add('replay');
+    sampleButton.classList.remove('replay');
+    void sampleButton.offsetWidth;
+    sampleButton.classList.add('replay');
   });
 </script>
 </body>
+
 </html>
