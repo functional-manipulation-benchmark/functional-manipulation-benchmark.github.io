@@ -142,9 +142,9 @@ h3 {
 }
 
 .video-grid>.video {
-    border: 2pt solid black;
+    border: 0pt solid black;
     border-radius: 1pt;
-    height: 100%;
+    /* height: 90%; */
 }
 
 .video-header {
