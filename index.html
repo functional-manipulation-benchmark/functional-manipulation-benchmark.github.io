@@ -246,17 +246,21 @@
               </div>
             </div>
             <div class="video-grid lang">
-              <div class="method">Primitive</div>
               <div class="method">Side 1 View</div>
               <div class="method">Side 2 View</div>
               <div class="method">Wrist 1 View</div>
               <div class="method">Wrist 2 View</div>
-              <div class="task" id="annotation_peg">loading...</div>
+              <!-- <div class="method">Primitive</div> -->
               <div class="video"><video id="side_1_image_peg" preload="auto" loop></video></div>
               <div class="video"><video id="side_2_image_peg" preload="auto" loop></video></div>
               <div class="video"><video id="wrist_1_image_peg" preload="auto" loop></video></div>
               <div class="video"><video id="wrist_2_image_peg" preload="auto" loop></video></div>
+              <div class="video"><video id="side_1_image_peg_depth" preload="auto" loop></video></div>
+              <div class="video"><video id="side_2_image_peg_depth" preload="auto" loop></video></div>
+              <div class="video"><video id="wrist_1_image_peg_depth" preload="auto" loop></video></div>
+              <div class="video"><video id="wrist_2_image_peg_depth" preload="auto" loop></video></div>
             </div>
+            <div class="outside-video-grid" id="annotation_peg">loading...</div>
           </div>
         </div>
       </div>
@@ -287,18 +291,21 @@
                 </div>
               </div>
               <div class="video-grid lang">
-                <div class="method">Primitive</div>
                 <div class="method">Side 1 View</div>
                 <div class="method">Side 2 View</div>
                 <div class="method">Wrist 1 View</div>
                 <div class="method">Wrist 2 View</div>
-                <div class="task" id="annotation_board">loading...</div>
                 <div class="video"><video id="side_1_image_board" preload="auto" loop></video></div>
                 <div class="video"><video id="side_2_image_board" preload="auto" loop></video></div>
                 <div class="video"><video id="wrist_1_image_board" preload="auto" loop></video></div>
                 <div class="video"><video id="wrist_2_image_board" preload="auto" loop></video></div>
+                <div class="video"><video id="side_1_image_board_depth" preload="auto" loop></video></div>
+                <div class="video"><video id="side_2_image_board_depth" preload="auto" loop></video></div>
+                <div class="video"><video id="wrist_1_image_board_depth" preload="auto" loop></video></div>
+                <div class="video"><video id="wrist_2_image_board_depth" preload="auto" loop></video></div>
               </div>
-            </div>
+            <div class="outside-video-grid" id="annotation_board">loading...</div>
+          </div>
           </div>
         </div>
       </div>
@@ -382,31 +389,28 @@
     var trajLinksPeg;
     fetch("peg.csv")
       .then(response => response.text())
-      .then(text => trajLinksPeg = text.split(/\r\n|\n/).filter(line => line.trim().length > 0 && line.split(",").length === 5))
+      .then(text => trajLinksPeg = text.split(/\r\n|\n/).filter(line => line.trim().length > 0 && line.split(",").length === 9))
       .then(sample_peg);
 
 
 
-    const prefixPeg = "peg_example_trajectory_mp4/";
+    const prefixPeg = "peg_example_trajectory_mp4_depth/";
     const side1ImagePeg = document.querySelector("#side_1_image_peg");
     const side2ImagePeg = document.querySelector("#side_2_image_peg");
     const wrist1ImagePeg = document.querySelector("#wrist_1_image_peg");
     const wrist2ImagePeg = document.querySelector("#wrist_2_image_peg");
+    const side1ImagePegDepth = document.querySelector("#side_1_image_peg_depth");
+    const side2ImagePegDepth = document.querySelector("#side_2_image_peg_depth");
+    const wrist1ImagePegDepth = document.querySelector("#wrist_1_image_peg_depth");
+    const wrist2ImagePegDepth = document.querySelector("#wrist_2_image_peg_depth");
     const annotationPeg = document.querySelector("#annotation_peg");
     function sample_peg() {
       if (typeof trajLinksPeg === 'undefined') return;
-
-      side1ImagePeg.src = '';
-      side2ImagePeg.src = '';
-      wrist1ImagePeg.src = '';
-      wrist2ImagePeg.src = '';
-      annotationPeg.innerText = 'asd...';
 
       const index = Math.floor(Math.random() * trajLinksPeg.length);
       const links = trajLinksPeg[index].split(",");
 
       side1ImagePeg.src = prefixPeg + links[0];
-      // console.log('side1ImagePeg src:', side1ImagePeg.src);
       side1ImagePeg.load();
       side1ImagePeg.play();
 
@@ -422,7 +426,23 @@
       wrist2ImagePeg.load();
       wrist2ImagePeg.play();
 
-      annotationPeg.innerText = links[4];
+      side1ImagePegDepth.src = prefixPeg + links[4];
+      side1ImagePegDepth.load();
+      side1ImagePegDepth.play();
+
+      side2ImagePegDepth.src = prefixPeg + links[5];
+      side2ImagePegDepth.load();
+      side2ImagePegDepth.play();
+
+      wrist1ImagePegDepth.src = prefixPeg + links[6];
+      wrist1ImagePegDepth.load();
+      wrist1ImagePegDepth.play();
+
+      wrist2ImagePegDepth.src = prefixPeg + links[7];
+      wrist2ImagePegDepth.load();
+      wrist2ImagePegDepth.play();
+
+      annotationPeg.innerText = links[8];
     }
 
     const sampleButtonPeg = document.querySelector('#sample-button-peg');
@@ -441,25 +461,23 @@
     var trajLinksBoard;
     fetch("board.csv")
       .then(response => response.text())
-      .then(text => trajLinksBoard = text.split(/\r\n|\n/).filter(line => line.trim().length > 0 && line.split(",").length === 5))
+      .then(text => trajLinksBoard = text.split(/\r\n|\n/).filter(line => line.trim().length > 0 && line.split(",").length === 9))
       .then(sample_board);
 
 
 
-    const prefixBoard = "board_example_trajectory_mp4/";
+    const prefixBoard = "board_example_trajectory_mp4_depth/";
     const side1ImageBoard = document.querySelector("#side_1_image_board");
     const side2ImageBoard = document.querySelector("#side_2_image_board");
     const wrist1ImageBoard = document.querySelector("#wrist_1_image_board");
     const wrist2ImageBoard = document.querySelector("#wrist_2_image_board");
+    const side1ImageBoardDepth = document.querySelector("#side_1_image_board_depth");
+    const side2ImageBoardDepth = document.querySelector("#side_2_image_board_depth");
+    const wrist1ImageBoardDepth = document.querySelector("#wrist_1_image_board_depth");
+    const wrist2ImageBoardDepth = document.querySelector("#wrist_2_image_board_depth");
     const annotationBoard = document.querySelector("#annotation_board");
     function sample_board() {
       if (typeof trajLinksBoard === 'undefined') return;
-
-      side1ImageBoard.src = '';
-      side2ImageBoard.src = '';
-      wrist1ImageBoard.src = '';
-      wrist2ImageBoard.src = '';
-      annotationBoard.innerText = 'asd...';
 
       const index = Math.floor(Math.random() * trajLinksBoard.length);
       const links = trajLinksBoard[index].split(",");
@@ -481,7 +499,23 @@
       wrist2ImageBoard.load();
       wrist2ImageBoard.play();
 
-      annotationBoard.innerText = links[4];
+      side1ImageBoardDepth.src = prefixBoard + links[4];
+      side1ImageBoardDepth.load();
+      side1ImageBoardDepth.play();
+
+      side2ImageBoardDepth.src = prefixBoard + links[5];
+      side2ImageBoardDepth.load();
+      side2ImageBoardDepth.play();
+
+      wrist1ImageBoardDepth.src = prefixBoard + links[6];
+      wrist1ImageBoardDepth.load();
+      wrist1ImageBoardDepth.play();
+
+      wrist2ImageBoardDepth.src = prefixBoard + links[7];
+      wrist2ImageBoardDepth.load();
+      wrist2ImageBoardDepth.play();
+
+      annotationBoard.innerText = links[8];
     }
 
     const sampleButtonBoard = document.querySelector('#sample-button-board');

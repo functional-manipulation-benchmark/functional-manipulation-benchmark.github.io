@@ -63,7 +63,7 @@ h3 {
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 300px));
+    grid-template-columns: repeat(2, minmax(0, 300px));
     justify-items: center;
     justify-content: center;
     align-items: center;
@@ -100,7 +100,7 @@ h3 {
 }
 
 .video-grid.lang {
-    grid-template-columns: repeat(5, minmax(0, 300px));
+    grid-template-columns: repeat(4, minmax(0, 300px));
     text-align: center;
 }
 
@@ -306,4 +306,18 @@ a {
     font-size: 22px; /* Adjust the size as needed */
     padding: 10px 15px; /* Adjust padding as needed */
     font-weight: bold;
+}
+
+
+.outside-video-grid {
+    background-color: rgba(255, 0, 0, 0.136);
+    border: none;
+    padding: 5pt;
+    border-radius: 5pt;
+    width: 40%; /* Adjust as needed */
+    margin-top: 1rem; /* Space above the element, adjust as needed */
+    text-align: center; /* If you want the text centered */
+    font-size: 15pt; /* Adjust font size as needed */
+    margin-left: auto;
+    margin-right: auto;
 }
