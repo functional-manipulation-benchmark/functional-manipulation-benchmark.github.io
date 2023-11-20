@@ -99,7 +99,8 @@
               <a href="https://rail.eecs.berkeley.edu/datasets/fmb/composition_board_3.zip">Assembly 3 (103Gb)</a>
             </h4>
             <h3 class="title is-4">Data Format</h3>
-            Each zip file contains a folder of trajectories. Each trajectory is saved as a <code>.npy</code> file. Each <code>.npy</code> file
+            Each zip file contains a folder of trajectories. Each trajectory is saved as a <code>.npy</code> file. Each
+            <code>.npy</code> file
             condtains a dictionary with the following keys value pairs:
             <ul>
               <li><code>obs/side_1</code> a (N, 256, 256, 3) numpy array of RGB images from the side camera 1 saved in
@@ -122,8 +123,10 @@
                 (XYZ, Quaternion)</li>
               <li><code>obs/tcp_vel</code> a (N, 6) numpy array of the end effector velocity in the robot's base frame
                 (XYZ, RPY)</li>
-              <li><code>obs/tcp_force</code> a (N, 3) numpy array of the end-effector force in the robot's base frame (XYZ)</li>
-              <li><code>obs/tcp_torque</code> a (N, 3) numpy array of the end-effector torque in the robot's base frame (RPY)</li>
+              <li><code>obs/tcp_force</code> a (N, 3) numpy array of the end-effector force in the robot's base frame
+                (XYZ)</li>
+              <li><code>obs/tcp_torque</code> a (N, 3) numpy array of the end-effector torque in the robot's base frame
+                (RPY)</li>
               <li><code>obs/q</code> a (N, 7) numpy array of the joint positions</li>
               <li><code>obs/dq</code> a (N, 7) numpy array of the joint velocities</li>
               <li><code>obs/jacobian</code> a (N, 6, 7) numpy array of the robot jacobian</li>
@@ -132,30 +135,68 @@
               <li><code>action</code> a (N, 7) numpy array of the commanded carteasian action (XYZ, RPY, gripper)</li>
               <li><code>primitive</code> a (N, ) numpy array of strings indicating the primitive associated with the
                 current timestep</li>
-              <li><code>peg_id (Multi-Object only)</code> a (N, ) numpy array of integers indicating the ID the object being manipulated in the
+              <li><code>peg_id (Multi-Object only)</code> a (N, ) numpy array of integers indicating the ID the object
+                being manipulated in the
                 current trajectory</li>
-              <li><code>object_info (Single-Object only)</code> a dictionary contain information of the object being manipulated in the current trajectory with the following keys-value pairs</li>
+              <li><code>object_info (Single-Object only)</code> a dictionary contain information of the object being
+                manipulated in the current trajectory with the following keys-value pairs</li>
               <ul>
                 <li><code>length</code> length of the object (<b>S</b>hort, <b>L</b>ong)</li>
-                <li><code>size</code> cross-sectional size of the object (<b>S</b>mall, <b>M</b>edium, <b>L</b>arge)</li>
-                <li><code>shape</code> shape ID of the object according to <a href="../static/doc/FMB Shape and Color Number Reference Sheet - Google Docs.pdf"> reference sheet</a></li>
-                <li><code>color</code> color ID of the object according to <a href="../static/doc/FMB Shape and Color Number Reference Sheet - Google Docs.pdf"> reference sheet</a></li>
-                <li><code>angle</code> initial pose of the object indicating how it should be grasped and reoriented (<b>horizontal</b>, <b>vertical</b>)</li>
-                <li><code>distractor</code> indicator for whether there are distractor objects (<b>y</b>es, <b>n</b>o)</li>
+                <li><code>size</code> cross-sectional size of the object (<b>S</b>mall, <b>M</b>edium, <b>L</b>arge)
+                </li>
+                <li><code>shape</code> shape ID of the object according to <a
+                    href="../static/doc/FMB Shape and Color Number Reference Sheet - Google Docs.pdf"> reference
+                    sheet</a></li>
+                <li><code>color</code> color ID of the object according to <a
+                    href="../static/doc/FMB Shape and Color Number Reference Sheet - Google Docs.pdf"> reference
+                    sheet</a></li>
+                <li><code>angle</code> initial pose of the object indicating how it should be grasped and reoriented
+                  (<b>horizontal</b>, <b>vertical</b>)</li>
+                <li><code>distractor</code> indicator for whether there are distractor objects (<b>y</b>es, <b>n</b>o)
+                </li>
 
               </ul>
-              </ul>
+            </ul>
             <h3 class="title is-4">File Naming</h3>
-            The Single-Object Dataset trajectory files are named as following: 
+            The Single-Object Dataset trajectory files are named as following:
             <br>
             <ul><code>(insert_only_){shape}_{size}_{length}_{color}_{angle}_{distractor}_{trajectory_id}.npy</code></ul>
             <br>
-            The Multi-Object Dataset trajectory files are named as following: 
+            The Multi-Object Dataset trajectory files are named as following:
             <br>
             <ul><code>trajectory_{object_id}_{trajectory_id}.npy</code></ul>
-            
+
+
+            <h3 class="title is-4">Using Point Clouds</h3>
+            The camera intrinsics are provided in the files below. They can be used to convert the depth images to point
+            cloud for your application.
             <br>
+            <ul>
+              <li><a href="../static/files/side_1">Side Camera 1 Intrinsics</a></li>
+              <li><a href="../static/files/side_2">Side Camera 2 Intrinsics</a></li>
+              <li><a href="../static/files/wrist_1">Wrist Camera 1 Intrinsics</a></li>
+              <li><a href="../static/files/wrist_2">Wrist Camera 2 Intrinsics</a></li>
+            </ul>
+            <div class="image-container" style="display: flex">
+              <div class="image-block">
+                <img src="../static/images/rgb.jpg" alt="Image A" class="equal-height-image">
+                <p class="caption" style="text-align: center;">
+                    Assembly Boards</a> </p>
+              </div>
+              <div class="image-block">
+                <img src="../static/images/depth.jpg" alt="Image B" class="equal-height-image">
+                <p class="caption" style="text-align: center;">
+                    Assembly Objects</p>
+              </div>
+              <div class="image-block">
+                <img src="../static/images/point_cloud.png" alt="Image B" class="equal-height-image">
+                <p class="caption" style="text-align: center;">
+                    Environment Fixture </p>
+              </div>
+            </div>
           </div>
+          <br>
+          <br>
         </div>
       </div>
     </div>
