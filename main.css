@@ -1,0 +1,347 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12pt;
+    font-variant-ligatures: no-common-ligatures;
+}
+
+p {
+    line-height: 1.5;
+    text-align: left;
+}
+
+.content-container {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.title {
+    margin: 2.5rem auto 2rem auto;
+    font-size: 23pt;
+}
+
+h2 {
+    font-size: 15pt;
+}
+
+.video-grid>div>img,
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.teaser {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hardware {
+    display: flex;
+    justify-content: center;
+}
+
+.hardware>img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 800;
+    font-family: "Raleway", sans-serif;
+}
+
+.video-container {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-grid-container {
+    display: flex;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 300px));
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0.5rem;
+    padding: 0rem;
+    margin-top: 0rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0rem;
+}
+
+.video-teaser {
+    margin-top: 0;
+}
+
+.video-teaser>div>h3 {
+    margin-top: 0;
+}
+
+.video-teaser>.video>img {
+    display: none;
+}
+
+@media (max-width: 720px) {
+    .video-teaser>.video>img {
+        display: block;
+    }
+
+    .video-teaser>.video>video {
+        display: none;
+    }
+}
+
+.traj-sampler {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    grid-template-columns: minmax(0, 1200px);
+
+    background-color: rgba(0, 0, 0, 0.16);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.video-grid.lang {
+    grid-template-columns: repeat(4, minmax(0, 300px));
+    text-align: center;
+}
+
+.video-grid>.task#annotation {
+    font-size: 15pt;
+}
+.video-grid>.method {
+    line-height: 1;
+}
+
+.video-grid>.task {
+    border: 2pt solid rgba(255, 0, 0, 0.475);
+    border-radius: 1pt;
+    width: 85%;
+    margin-top: 0rem;
+}
+
+.video-grid.lang>.task {
+    background-color: rgba(255, 0, 0, 0.136);
+    border: none;
+    padding: 5pt;
+    border-radius: 5pt;
+}
+
+.video-grid>.video {
+    border: 0pt solid black;
+    border-radius: 1pt;
+    /* height: 90%; */
+}
+
+.video-header {
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+
+.video-header>* {
+    display: block;
+    margin: 0;
+}
+
+.link-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.link-button {
+    display: inline;
+    padding-right: 30pt;
+    padding-left: 30pt;
+}
+
+.link-button>a>span {
+    display: block;
+    text-align: center;
+    padding-top: 5pt;
+}
+
+.link-button>a>img {
+    width: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: #3880BA
+}
+
+.link-buttons>ul {
+    padding: 0
+}
+
+.link-buttons>ul>li {
+    display: inline;
+    margin-left: 5pt;
+    margin-right: 5pt;
+}
+
+.play-button {
+    cursor: pointer;
+    display: flex;
+    background-color: rgb(44, 177, 244);
+    margin-left: 1em;
+    border-radius: 5pt;
+    padding: 2pt 3pt;
+    align-items: center;
+}
+
+.play-button:active {
+    background-color: rgb(44, 177, 244, 0.5);
+}
+
+.play-button>img {
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+}
+
+.play-button>div {
+    margin-bottom: 1pt;
+    margin-right: 2pt;
+    font-family: "Open Sans", sans-serif;
+    font-size: 10pt;
+}
+
+.replay>img {
+    animation: spin 0.5s ease 1;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+#sample-button-peg {
+    cursor: pointer;
+    display: flex;
+    margin-left: 1rem;
+    background-color: rgb(44, 177, 244);
+    border-radius: 5pt;
+    padding: 2pt 3pt;
+    align-items: center;
+}
+
+#sample-button-peg:active {
+    background-color: rgb(44, 177, 244, 0.5);
+}
+
+#sample-button-peg>img {
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+}
+
+#sample-button-peg>div {
+    margin-bottom: 1pt;
+    margin-right: 2pt;
+    font-family: "Open Sans", sans-serif;
+    font-size: 10pt;
+}
+
+#sample-button-board {
+    cursor: pointer;
+    display: flex;
+    margin-left: 1rem;
+    background-color: rgb(44, 177, 244);
+    border-radius: 5pt;
+    padding: 2pt 3pt;
+    align-items: center;
+}
+
+#sample-button-board:active {
+    background-color: rgb(44, 177, 244, 0.5);
+}
+
+#sample-button-board>img {
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+}
+
+#sample-button-board>div {
+    margin-bottom: 1pt;
+    margin-right: 2pt;
+    font-family: "Open Sans", sans-serif;
+    font-size: 10pt;
+}
+
+.pie>img {
+    width: 60%;
+    padding: 30pt;
+}
+
+.pie {
+    display: flex;
+    justify-content: center;
+}
+
+.equal-height-image {
+    max-height: 500px; /* Set the desired height */
+    /* width: auto; */
+    object-fit: contain; /* This will ensure the images cover the area without distorting */
+    /* gap: 0.5rem; */
+}
+
+.image-block {
+    margin-right: 1px; /* Adjust the value to get the desired gap */
+}
+
+/* Remove margin from the last image block */
+.image-block:last-child {
+    margin-right: 0;
+}
+
+.navbar {
+    background-color: #74b2f3; /* Example: a shade of blue */
+    color: white;
+}
+.navbar-item {
+    font-size: 22px; /* Adjust the size as needed */
+    padding: 10px 15px; /* Adjust padding as needed */
+    font-weight: bold;
+}
+
+
+.outside-video-grid {
+    background-color: rgba(255, 0, 0, 0.136);
+    border: none;
+    padding: 5pt;
+    border-radius: 5pt;
+    width: 40%; /* Adjust as needed */
+    margin-top: 1rem; /* Space above the element, adjust as needed */
+    text-align: center; /* If you want the text centered */
+    font-size: 15pt; /* Adjust font size as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.code {
+    background-color: #f4f4f4; /* Light grey background */
+    border-radius: 4px;        /* Rounded corners */
+    padding: 2px 4px;          /* Padding around the text */
+    font-family: monospace;    /* Monospaced font */
+}
