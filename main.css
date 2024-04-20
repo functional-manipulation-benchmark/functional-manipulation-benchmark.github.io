@@ -345,3 +345,41 @@ a {
     padding: 2px 4px;          /* Padding around the text */
     font-family: monospace;    /* Monospaced font */
 }
+
+.results-carousel {
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  
+  .results-carousel .item {
+    margin: 5px;
+    overflow: hidden;
+    /* border: 1px solid #bbb;
+    border-radius: 10px; */
+    padding: 0;
+    font-size: 0;
+  }
+  
+  .results-carousel video {
+    margin: 0;
+  }
+
+  .results-carousel img {
+    margin: 0;
+  }
+
+table {
+    width: 100%; /* Ensure the table uses full width of its container */
+    table-layout: fixed; /* Optional: helps in maintaining consistent column widths */
+}
+.container {
+    width: 100%; /* Full width of the cell */
+}
+.carousel {
+    width: 100%; /* Full width of its container */
+}
+.carousel img {
+    width: 100%; /* Images will scale to the width of the carousel */
+    height: auto; /* Maintain aspect ratio */
+}
+  
