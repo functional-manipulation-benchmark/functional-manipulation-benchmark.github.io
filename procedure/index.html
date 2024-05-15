@@ -114,8 +114,13 @@
 
 
             <h3 class="title is-4">Rotate</h3>
-            <p><strong> Initial State: </strong>An object is grasped by the gripper in any orientation 5cm above the
-              center of the grasp randomization region.</p>
+            <p><strong> Initial State: </strong>An assymetric object is grasped by the gripper in one of the two orientations below, 5cm above the
+              center of the grasp region. 
+              <br>
+              1) Orientation 1 is only for objects that are assymetric along the long side (shapes 6, 7, and 8). 
+              <br>
+              2) Likewise, 
+            orientation 2 is only for objects that are assymetric along the cross section (shapes 5 and 6). </p>
 
             <div class="image-container" style="display: flex; width:70%; align-content: center;">
               <div class="image-block">
@@ -131,12 +136,16 @@
               </div>
             </div>
             <br>
-            <p><strong>Number of Trials:</strong> 50 trials total; sample 5 seen and 5 unseen objects and conduct 5
+            <p><strong>Number of Trials:</strong> 50 trials total; sample 5 seen objects of shapes 5, 6, 7, 8; and 5 unseen objects. Conduct 5
               trials each. </p>
-            <p><strong>Success Criteria:</strong> If the object is positioned horizontally, the insertion prong should
-              be facing away from the board,
-              within ±15º of rotation. If the object is positioned vertically, the object should be aligned with the
-              direction of the holes in the board, within ±15º offset. </p>
+            <p><strong>Success Criteria:</strong> 
+              <br>
+              1) If the object started in orientation 1, the task is considered success if the object is placed within the randomization region, and the insertion prong
+              is facing away from the board, within ±15º of rotation tolerance as shown in the top filmstrip below.
+
+              <br>
+              2) If the object started in orientation 2, the task is considered success if the object is placed within the randomization region, and the top cross section of the object
+              is aligned with the corresponding opening in the board, within a ±15º tolerance as shwon in the bottom filmstrip. </p>
             <img src="../static/images/rotate_success.jpg" alt="Image A" style="width:100%">
 
             <h3 class="title is-4">Place on fixture</h3>
