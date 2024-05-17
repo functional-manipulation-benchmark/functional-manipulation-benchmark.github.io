@@ -60,11 +60,14 @@
   <a class="navbar-item" href=../index.html>
     Home
   </a>
+  <a class="navbar-item" href=../usage/index.html>
+    Usage Instructions
+  </a>
   <a class="navbar-item" href=../dataset/index.html>
     Dataset
   </a>
   <a class="navbar-item" href=../files/index.html>
-    Setup
+    Material
   </a>
   <a class="navbar-item" href=../procedure/index.html>
     Evaluation Procedure
@@ -79,8 +82,127 @@
   <div class="container is-widescreen">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3" style="text-align: left;" id="usage">Comming Soon</h2>
+        <h2 class="title is-3" style="text-align: left;" id="usage">Usage Instructions</h2>
+        <h3 class="title is-4" style="text-align: left;"> 1. Obtaining The Objects</h3>
+        <div class="content has-text-justified">
+          Obtain all the required equipment listed <a
+            href="https://docs.google.com/spreadsheets/d/1FNBmwlPkXbzScR-CIzNcIH1uaLNXOD9VvLRkpvJ98Z4/edit#gid=445569452&range=A1">
+            here</a>. This includes the bin for the workspace, spray paint for the bin to reduce reflections,
+          the camera and robot used for collecting the FMB dataset, and the 3D-printing filament of various colors used
+          to print the task objects, environment fixtures, and camera mounts.
+
+          <br>
+          <br>
+          <!-- add link -->
+          Now, 3D-print 2 side camera mount and 1 wrist camera mount, which can be found here. Make sure the wrist
+          camera is printed with black
+          filament, as it would be seen in some observations, while the side camera mount can be printed in any color.
+          <br>
+          <br>
+          <!-- add 2 links -->
+          Then, 3D-print the desired task objects, depending on the task being studied. For example, one can start with
+          only a single insertion board
+          and a handful of assembly objects to experiment with the Single-Object Assembly Task; or print one
+          Multi-Object Assembly to study long horizon tasks.
+          The color of filament to print each object with is specified here.
+
+          <br>
+          <br>
+          **Note** If a Franka robot is unavailable, you may still use FMB task and evaluation protocol with a different
+          robot arm.
+          Although the data likely will not generalize out of the box, it may be used for co-training.
+        </div>
+
+
+        <h3 class="title is-4" style="text-align: left;"> 2. Setting Up the Workspace</h3>
+        <div class="content has-text-justified">
+
+          Once all the necessary materials have been obtained, you can set up the workspace for the robot according to
+          the instructions and dimensions in the diagram below.
+          <br>
+          <br>
+          <strong> 2.1 Setting up the bin and wrist camera: </strong>
+
+          <ol>
+            <li>Spray paint the interior of the bin until it is uniform in color.</li>
+            <li>Fix the bin 17 cm in front of the robot base.</li>
+            <li>Fix the reorientation fixture onto the bin according to the dimensions in the diagram.</li>
+            <li> Mount the wrist camera between the flange and gripper of the Franka arm. Make sure to re-calibrate the
+              end-effector load in the Franka Desk interface to account for the added weight of the camera. </li>
+          </ol>
+
+          <strong> 2.2 Setting up the side cameras: </strong>
+
+          <ol>
+            <li>Mount two vertical posts at least 25cm tall (measured from the bottom of the bin) on two sides of the
+              bin according to the dimensions in the topdown diagram.</li>
+            <li>Fix the two 3D-printed side camera mount onto the interior side of the post. The flat bottom edge of the
+              camera mount should be 15cm above the bottom of the bin. </li>
+          </ol>
+        </div>
+        <div class="image-container" style="text-align:center">
+          <div>
+            <img src="../static/images/workspace_setup_2.jpg" alt="Image A" style="width:75%">
+            <p class="caption" style="text-align: center;">Workspace top view schematic with dimensions</p>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="image-container" style="text-align:center">
+          <div>
+            <img src="../static/images/Setup_picture.png" alt="Image A" style="width:60%">
+            <p class="caption" style="text-align: center;">Workspace front view</p>
+          </div>
+        </div>
+
+
+        <h3 class="title is-4" style="text-align: left;"> 3. Using the Data</h3>
+        <div class="content has-text-justified">
+          The FMB dataset can be found <a
+            href="https://functional-manipulation-benchmark.github.io/dataset/index.html">here</a>. It is released in
+          <code>.npy</code> format for easy of use and maximum flexibility.
+          The Single-Object Multi-Stage Manipulation Task dataset is bundled into one zip file containing folders of
+          trajectories.
+          Each assembly of the Multi-Object Multi-Stage Manipulation Task is grouped into separate zip files also
+          containing folders of trajectories.
+        </div>
+
+
+        <h3 class="title is-4" style="text-align: left;"> 4. Running the Robot</h3>
+        <div class="content has-text-justified">
+          The full robot infra stack used to collect demos and evaluate checkpoints is available <a
+            href="https://github.com/rail-berkeley/fmb/tree/main/robot_infra"> here</a>. It includes a compliant
+          carteasian
+          position impedance control for controlling the robot, and a joint position controller to performance joint
+          resets.
+        </div>
+
+        <h3 class="title is-4" style="text-align: left;"> 5. Training the Baselines</h3>
+        <div class="content has-text-justified">
+          The training and inference code for the ResNet- and Transformer-based models used in the FMB paper is
+          available on our <a href="https://github.com/rail-berkeley/fmb/tree/main">GitHub repo</a>.
+
+          <br>
+          <br>
+          In addition, the trained checkpoints for the experiments in the paper are also released and ready to be used
+          <a href="https://github.com/rail-berkeley/fmb/releases/tag/Checkpoints">here</a>. These checkpoints can
+          be used to verify the physical setup and test the robot infra. It can also be used as complete modules for
+          completing parts of the task,
+          so researchers can focus on studying the aspect of FMB they are most interested in.
+        </div>
+
+        <h3 class="title is-4" style="text-align: left;"> 6. Evaluating Policies</h3>
+        <div class="content has-text-justified">
+          In order to compare the efficacy of different methods, we provide a detailed set of evaluation protocols for
+          each single primitive and
+          multi-step tasks. These can be found <a href="https://functional-manipulation-benchmark.github.io/procedure/index.html">here</a>.
+          <br>
+          <br>
+
+        </div>
+      </div>
     </div>
+    </section>
   </div>
   </section>
 
